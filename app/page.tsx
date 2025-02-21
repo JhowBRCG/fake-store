@@ -1,3 +1,13 @@
+import Select from "@/components/Select";
+
 export default function Home() {
-  return <h1 className="">Hello</h1>;
+  return (
+    <main className="mt-[75px] px-[10px] py-[20px]">
+      <div className="flex items-center gap-2">
+        <Select />
+        <Select />
+        <Select />
+      </div>
+    </main>
+  );
 }
