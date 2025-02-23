@@ -7,9 +7,15 @@ type productCardProps = {
 
 export default function ProductCard({ product }: productCardProps) {
   return (
-    <article className="bg-white px-4 py-6" key={product.id}>
-      <Image src={product.image} width={300} height={300} alt="product image" />
-      <h2 className="text-sm">{product.title}</h2>
+    <article className="h-full bg-white px-4 py-6" key={product.id}>
+      <Image
+        src={product.image}
+        className="m-auto"
+        width={300}
+        height={300}
+        alt="product image"
+      />
+      <h2 className="text-center text-sm">{product.title}</h2>
     </article>
   );
 }
