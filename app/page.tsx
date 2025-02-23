@@ -1,4 +1,5 @@
 import Select from "@/components/Select";
+import Products from "@/components/Products";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
         <Select />
         <Select />
       </div>
+      <Products />
     </main>
   );
 }
