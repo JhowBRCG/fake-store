@@ -1,8 +1,8 @@
 import { productProps } from "../@types/productProps";
 
-export async function getProducts(page: number, limit: number) {
+export async function getProducts(currentPage: number, itemsPerPage: number) {
   const response = await fetch(
-    `https://fakestoreapi.in/api/products?page=${page}&limit=${limit}`,
+    `https://fakestoreapi.in/api/products?page=${currentPage}&limit=${itemsPerPage}`,
   );
   const data = await response.json();
 
