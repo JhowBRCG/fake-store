@@ -8,7 +8,8 @@ import Link from "next/link";
 export default function Products() {
   const { data, isLoading } = useQuery({
     queryKey: ["products"],
-    queryFn: () => getProducts(1, 4),
+    queryFn: () => getProducts(1),
+    refetchOnWindowFocus: false,
   });
 
   if (isLoading) return <p>Loading...</p>;
