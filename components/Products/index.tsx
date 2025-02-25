@@ -2,8 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "@/lib/services/getProducts";
-import ProductCard from "../ProductCard";
-import Link from "next/link";
+import ProductList from "../ProductList";
 
 export default function Products() {
   const { data, isLoading } = useQuery({
@@ -15,12 +14,8 @@ export default function Products() {
   if (isLoading) return <p>Loading...</p>;
 
   return (
-    <section className="mt-[20px] grid grid-cols-2 gap-[2px] overflow-hidden rounded-lg">
-      {data?.map((product) => (
-        <Link href="" key={product.id}>
-          <ProductCard product={product} />
-        </Link>
-      ))}
+    <section>
+      <ProductList products={data || []} />
     </section>
   );
 }
