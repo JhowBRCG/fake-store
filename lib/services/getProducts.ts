@@ -9,5 +9,5 @@ export async function getProducts(currentPage: number, itemsPerPage: number) {
 
   const data = await response.json();
 
-  return data.products as Promise<productProps[]>;
+  return data.products as productProps[];
 }
