@@ -1,4 +1,4 @@
-import Select from "@/components/Select";
+import Select from "@/components/UI/Select";
 import Products from "@/components/Products";
 
 export default function Home() {
