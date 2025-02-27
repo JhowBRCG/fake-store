@@ -1,5 +1,5 @@
 import Select from "@/components/UI/Select";
-import Products from "@/components/Products";
+import Products from "@/components/Sections/Products";
 
 export default function Home() {
   return (

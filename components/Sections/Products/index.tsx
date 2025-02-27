@@ -3,8 +3,8 @@
 import { useSearchParams } from "next/navigation";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { getProducts } from "@/lib/services/getProducts";
-import ProductList from "../ProductList";
-import Pagination from "../UI/Pagination";
+import ProductList from "@/components/ProductList";
+import Pagination from "@/components/UI/Pagination";
 
 export default function Products() {
   const searchParams = useSearchParams();
