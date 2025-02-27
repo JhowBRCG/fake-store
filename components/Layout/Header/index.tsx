@@ -1,5 +1,5 @@
 import Cart from "../../Cart";
-import SearchInput from "../../SearchInput";
+import SearchInput from "../../UI/SearchInput";
 
 export default function Header() {
   return (
