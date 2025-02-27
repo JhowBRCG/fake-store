@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ProductCard from "../ProductCard";
+import ProductCard from "../UI/ProductCard";
 import { productProps } from "@/lib/@types/productProps";
 
 type productListProps = {
