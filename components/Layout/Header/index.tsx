@@ -1,4 +1,4 @@
-import Cart from "../../Cart";
+import Cart from "../../UI/Cart";
 import SearchInput from "../../UI/SearchInput";
 
 export default function Header() {
