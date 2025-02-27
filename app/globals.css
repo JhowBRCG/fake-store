@@ -12,3 +12,27 @@ body {
   background: var(--background);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }
+
+.pagination {
+  @apply flex items-center justify-center overflow-hidden rounded-lg bg-white;
+
+  & > li {
+    @apply w-full border text-center hover:bg-slate-300;
+  }
+
+  & a {
+    @apply block h-full w-full p-2;
+  }
+
+  & .active-page {
+    @apply bg-black text-white;
+  }
+
+  & .disabled-page {
+    @apply pointer-events-none bg-white text-black text-opacity-30;
+  }
+
+  & .break-pagination {
+    @apply pointer-events-none bg-white;
+  }
+}
