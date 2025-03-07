@@ -1,21 +1,14 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import { getProducts } from "@/lib/services/getProducts";
 import ProductList from "@/components/ProductList";
 import Pagination from "@/components/UI/Pagination";
+import { useProducts } from "@/lib/hooks/useProducts";
 
 export default function Products() {
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get("page") || 1);
-
-  const { data, isLoading } = useQuery({
-    queryKey: ["products", currentPage],
-    queryFn: () => getProducts(currentPage),
-    refetchOnWindowFocus: false,
-    placeholderData: keepPreviousData,
-  });
+  const { data, isLoading } = useProducts(currentPage);
 
   if (isLoading) return <p>Loading...</p>;
 
