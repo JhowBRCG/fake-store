@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Layout/Header";
-import QueryProvider from "@/components/QueryProvider";
+import QueryProvider from "@/lib/providers/QueryProvider";
 
 const inter = Inter({
   variable: "--font-inter",
