@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
-import { IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { CATEGORIES } from "@/config";
 import { useRouter, usePathname } from "next/navigation";
 
