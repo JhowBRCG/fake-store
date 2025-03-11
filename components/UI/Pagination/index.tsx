@@ -3,9 +3,13 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 type paginationProps = {
   currentPage: number;
+  totalPages: number;
 };
 
-export default function Pagination({ currentPage }: paginationProps) {
+export default function Pagination({
+  currentPage,
+  totalPages,
+}: paginationProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -26,7 +30,7 @@ export default function Pagination({ currentPage }: paginationProps) {
       onPageChange={handlePageChange}
       pageRangeDisplayed={3}
       marginPagesDisplayed={1}
-      pageCount={10}
+      pageCount={totalPages}
       previousLabel="previous"
       renderOnZeroPageCount={null}
       forcePage={currentPage - 1}
