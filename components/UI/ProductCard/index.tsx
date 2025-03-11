@@ -9,7 +9,7 @@ export default function ProductCard({ product }: productCardProps) {
   return (
     <article className="h-full bg-white px-4 py-6" key={product.id}>
       <Image
-        src={product.image}
+        src={product.images[0]}
         className="m-auto"
         width={300}
         height={300}
