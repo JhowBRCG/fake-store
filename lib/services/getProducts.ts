@@ -2,7 +2,11 @@ import { apiResponse } from "../@types/productProps";
 import { API_URL, ITEMS_PER_PAGE } from "@/config";
 
 export async function getProducts(currentPage: number) {
-  const response = await fetch(`${API_URL}?limit=${ITEMS_PER_PAGE}`);
+  const skip = (currentPage - 1) * ITEMS_PER_PAGE;
+
+  const response = await fetch(
+    `${API_URL}?limit=${ITEMS_PER_PAGE}&skip=${skip}`,
+  );
 
   if (!response.ok) throw new Error("Failed to fetch data");
 
