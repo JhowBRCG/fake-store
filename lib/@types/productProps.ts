@@ -6,3 +6,8 @@ export type productProps = {
   brand: string;
   images: string[];
 };
+
+export type apiResponse = {
+  products: productProps[];
+  total: number;
+};
