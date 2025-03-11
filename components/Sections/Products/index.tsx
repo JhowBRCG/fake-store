@@ -16,7 +16,7 @@ export default function Products() {
     <section>
       <ProductList products={data?.products || []} />
       <nav className="mt-4">
-        <Pagination currentPage={currentPage} />
+        <Pagination currentPage={currentPage} totalPages={data?.total || 0} />
       </nav>
     </section>
   );
