@@ -1,4 +1,4 @@
-export const API_URL = "https://fakestoreapi.in/api/products";
+export const API_URL = "https://dummyjson.com/products";
 
 export const ITEMS_PER_PAGE = 15;
 
