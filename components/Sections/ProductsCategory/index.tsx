@@ -20,7 +20,7 @@ export default function ProductsCategory({
 
   return (
     <section>
-      <ProductList products={data || []} />
+      <ProductList products={data?.products || []} />
       <nav className="mt-4">
         <Pagination currentPage={currentPage} />
       </nav>
