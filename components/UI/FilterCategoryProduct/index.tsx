@@ -4,13 +4,16 @@ import { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { CATEGORIES } from "@/config";
 import { useRouter, usePathname } from "next/navigation";
+import { formatCategory } from "@/lib/utils/formatCategory";
 
 export default function FilterCategoryProduct() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const pathName = usePathname();
 
-  const currentCategory = pathName.split("/")[2] || "Categories";
+  const currentCategory = formatCategory(
+    pathName.split("/")[2] || "Categories",
+  );
 
   const toggleSelect = () => setOpen(!open);
 
@@ -39,7 +42,7 @@ export default function FilterCategoryProduct() {
                 key={category}
                 className="cursor-default px-2 py-1 text-xs capitalize hover:bg-slate-200"
               >
-                {category}
+                {formatCategory(category)}
               </li>
             ))}
             <li
