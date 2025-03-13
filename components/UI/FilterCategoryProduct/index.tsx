@@ -22,7 +22,7 @@ export default function FilterCategoryProduct() {
   const Icon = open ? IoIosArrowUp : IoIosArrowDown;
 
   return (
-    <div className="relative w-full max-w-[107px]">
+    <div className="relative w-full max-w-[50%]">
       <div
         onClick={toggleSelect}
         className="flex w-full cursor-pointer items-center justify-between rounded-lg border-2 border-black bg-slate-50 px-2 py-1"
