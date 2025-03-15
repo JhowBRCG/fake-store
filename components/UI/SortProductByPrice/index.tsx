@@ -35,7 +35,7 @@ export default function SortProductByPrice() {
                 key={item}
                 onClick={() => handleSortFilter(item)}
               >
-                {item === "asc" ? "ascendent" : "descendent"}
+                {item === "asc" ? "ascending" : "descending"}
               </li>
             ))}
             <li
