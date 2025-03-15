@@ -14,10 +14,20 @@ export default function ProductsCategory({
   categoryName,
 }: ProductsCategoryProps) {
   const searchParams = useSearchParams();
+
   const currentPage = Number(searchParams.get("page") || 1);
-  const { data, isLoading } = useProductsByCategory(categoryName, currentPage);
+  const sort = String(searchParams.get("sort") || "");
+  const order = String(searchParams.get("order") || "");
+
+  const { data, isLoading } = useProductsByCategory(
+    categoryName,
+    currentPage,
+    sort,
+    order,
+  );
 
   if (isLoading) return <p>Loading...</p>;
+
   const totalPages = calculateTotalPages(data?.total || 0);
 
   return (
