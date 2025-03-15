@@ -8,11 +8,16 @@ import calculateTotalPages from "@/lib/utils/calculateTotalPages";
 
 export default function Products() {
   const searchParams = useSearchParams();
+
   const currentPage = Number(searchParams.get("page") || 1);
-  const { data, isLoading } = useProducts(currentPage);
+  const sort = searchParams.get("sort") || undefined;
+  const order = searchParams.get("order") || undefined;
+
+  const { data, isLoading } = useProducts(currentPage, sort, order);
+
+  const totalPages = calculateTotalPages(data?.total || 0);
 
   if (isLoading) return <p>Loading...</p>;
-  const totalPages = calculateTotalPages(data?.total || 0);
 
   return (
     <section>
