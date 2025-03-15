@@ -3,8 +3,8 @@ import { API_URL, ITEMS_PER_PAGE } from "@/config";
 
 export async function getProducts(
   currentPage: number,
-  sort?: string,
-  order?: string,
+  sort: string,
+  order: string,
 ) {
   const skip = (currentPage - 1) * ITEMS_PER_PAGE;
 
