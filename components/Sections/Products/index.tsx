@@ -10,8 +10,8 @@ export default function Products() {
   const searchParams = useSearchParams();
 
   const currentPage = Number(searchParams.get("page") || 1);
-  const sort = searchParams.get("sort") || undefined;
-  const order = searchParams.get("order") || undefined;
+  const sort = String(searchParams.get("sort") || "");
+  const order = String(searchParams.get("order") || "");
 
   const { data, isLoading } = useProducts(currentPage, sort, order);
 
