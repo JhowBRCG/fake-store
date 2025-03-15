@@ -9,7 +9,7 @@ export async function getProducts(
   const skip = (currentPage - 1) * ITEMS_PER_PAGE;
 
   const response = await fetch(
-    `${API_URL}?limit=${ITEMS_PER_PAGE}&skip=${skip}&sortBy=${sort || ""}&order=${order || ""}`,
+    `${API_URL}?limit=${ITEMS_PER_PAGE}&skip=${skip}&sortBy=${sort}&order=${order}`,
   );
 
   if (!response.ok) throw new Error("Failed to fetch data");
