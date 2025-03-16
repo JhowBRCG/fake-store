@@ -13,7 +13,7 @@ export default function ProductCard({ product }: productCardProps) {
         className="m-auto"
         width={300}
         height={300}
-        alt="product image"
+        alt={product.title}
       />
       <h2 className="text-center text-sm">{product.title}</h2>
       <p className="mt-3 text-center">${product.price}</p>
