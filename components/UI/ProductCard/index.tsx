@@ -16,6 +16,7 @@ export default function ProductCard({ product }: productCardProps) {
         alt="product image"
       />
       <h2 className="text-center text-sm">{product.title}</h2>
+      <p className="mt-3 text-center">${product.price}</p>
     </article>
   );
 }
