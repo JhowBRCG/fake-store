@@ -21,11 +21,17 @@ export default function Products() {
   const { data, isLoading } = query ? searchResults : allProducts;
 
   const totalPages = calculateTotalPages(data?.total || 0);
+  const showSearchQuery = searchParams.get("q");
 
   if (isLoading) return <p>Loading...</p>;
 
   return (
     <section>
+      {showSearchQuery && (
+        <p className="mt-3 uppercase">
+          The results for: <strong>{showSearchQuery}</strong>
+        </p>
+      )}
       <ProductList products={data?.products || []} />
       <nav className="mt-4">
         <Pagination currentPage={currentPage} totalPages={totalPages} />
