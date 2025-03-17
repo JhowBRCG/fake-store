@@ -2,12 +2,13 @@
 
 import { IoMdSearch } from "react-icons/io";
 import { useState } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 
 export default function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const searchParams = useSearchParams();
+  const pathName = usePathname();
   const router = useRouter();
 
   const handleSubmitSearchQuery = (e: React.FormEvent) => {
@@ -16,7 +17,10 @@ export default function SearchBar() {
 
     const params = new URLSearchParams(searchParams.toString());
     params.set("q", searchQuery.toString());
-    router.push(`?${params.toString()}`);
+
+    if (pathName.startsWith("/category")) {
+      router.push(`/?${params.toString()}`);
+    } else router.push(`?${params.toString()}`);
 
     setSearchQuery("");
   };
