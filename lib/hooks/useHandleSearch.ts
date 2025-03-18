@@ -15,9 +15,10 @@ export function useHandleSearch() {
     const params = new URLSearchParams(searchParams.toString());
     params.set("q", searchQuery.toString());
 
-    if (pathName.startsWith("/category")) {
-      router.push(`/?${params.toString()}`);
-    } else router.push(`?${params.toString}`);
+    const newPath = pathName.startsWith("/category")
+      ? `/?${params}`
+      : `?${params}`;
+    router.push(newPath);
 
     setSearchQuery("");
   };
