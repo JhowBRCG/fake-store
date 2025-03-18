@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { formatCategory } from "@/lib/utils/formatCategory";
 import { useCategoryFilter } from "@/lib/hooks/useCategoryFilter";
 
-export default function FilterCategoryProduct() {
+export default function CategoryFilter() {
   const pathName = usePathname();
   const { toggleFilter, handleCategory, isFilterOpen, showAllProducts } =
     useCategoryFilter();
