@@ -1,7 +1,7 @@
 "use client";
 
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { useSortProductByPrice } from "@/lib/hooks/useSortProductByPrice";
+import { useProductSortPrice } from "@/lib/hooks/useProductSortPrice";
 
 const sortItems = ["asc", "desc"];
 
@@ -12,7 +12,7 @@ export default function SortProductByPrice() {
     handleSortFilter,
     allItems,
     getCurrentSortOrder,
-  } = useSortProductByPrice();
+  } = useProductSortPrice();
 
   const Icon = isFilterOpen ? IoIosArrowUp : IoIosArrowDown;
 

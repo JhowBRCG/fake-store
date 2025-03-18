@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
-export function useSortProductByPrice() {
+export function useProductSortPrice() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const searchParams = useSearchParams();
   const router = useRouter();
