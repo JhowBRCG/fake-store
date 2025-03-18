@@ -14,13 +14,13 @@ export function useFilterCategoryProduct() {
     closeFilter();
   };
 
-  const allProducts = () => router.push("/");
+  const showAllProducts = () => router.push("/");
 
   return {
+    isFilterOpen,
     toggleFilter,
     closeFilter,
     handleCategory,
-    allProducts,
-    isFilterOpen,
+    showAllProducts,
   };
 }

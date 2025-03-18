@@ -8,7 +8,7 @@ import { useFilterCategoryProduct } from "@/lib/hooks/useFilterCategoryProduct";
 
 export default function FilterCategoryProduct() {
   const pathName = usePathname();
-  const { toggleFilter, handleCategory, isFilterOpen, allProducts } =
+  const { toggleFilter, handleCategory, isFilterOpen, showAllProducts } =
     useFilterCategoryProduct();
 
   const currentCategory = formatCategory(
@@ -39,7 +39,7 @@ export default function FilterCategoryProduct() {
               </li>
             ))}
             <li
-              onClick={allProducts}
+              onClick={showAllProducts}
               className="cursor-default px-2 py-1 text-xs capitalize hover:bg-slate-200"
             >
               All
