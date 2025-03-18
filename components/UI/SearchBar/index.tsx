@@ -1,29 +1,11 @@
 "use client";
 
 import { IoMdSearch } from "react-icons/io";
-import { useState } from "react";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useHandleSearch } from "@/lib/hooks/useHandleSearch";
 
 export default function SearchBar() {
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const searchParams = useSearchParams();
-  const pathName = usePathname();
-  const router = useRouter();
-
-  const handleSubmitSearchQuery = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!searchQuery) return;
-
-    const params = new URLSearchParams(searchParams.toString());
-    params.set("q", searchQuery.toString());
-
-    if (pathName.startsWith("/category")) {
-      router.push(`/?${params.toString()}`);
-    } else router.push(`?${params.toString()}`);
-
-    setSearchQuery("");
-  };
+  const { searchQuery, setSearchQuery, handleSubmitSearchQuery } =
+    useHandleSearch();
 
   return (
     <form className="relative" onSubmit={handleSubmitSearchQuery}>
