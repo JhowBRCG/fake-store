@@ -4,12 +4,12 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { CATEGORIES } from "@/config";
 import { usePathname } from "next/navigation";
 import { formatCategory } from "@/lib/utils/formatCategory";
-import { useFilterCategoryProduct } from "@/lib/hooks/useFilterCategoryProduct";
+import { useCategoryFilter } from "@/lib/hooks/useCategoryFilter";
 
 export default function FilterCategoryProduct() {
   const pathName = usePathname();
   const { toggleFilter, handleCategory, isFilterOpen, showAllProducts } =
-    useFilterCategoryProduct();
+    useCategoryFilter();
 
   const currentCategory = formatCategory(
     pathName.split("/")[2] || "Categories",

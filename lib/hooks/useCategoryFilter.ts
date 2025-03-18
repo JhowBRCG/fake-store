@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export function useFilterCategoryProduct() {
+export function useCategoryFilter() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const router = useRouter();
