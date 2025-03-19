@@ -6,6 +6,7 @@
   --background: #ebebeb;
   --foreground: #171717;
   --container-md: 700px;
+  --container-lg: 900px;
 }
 
 body {
