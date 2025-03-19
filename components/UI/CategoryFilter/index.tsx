@@ -27,7 +27,7 @@ export default function CategoryFilter() {
         <Icon className="text-base" />
       </div>
       {isFilterOpen && (
-        <div className="absolute mt-2 w-full rounded-lg bg-slate-50 p-2 px-0">
+        <div className="absolute z-[5] mt-2 w-full rounded-lg bg-slate-50 p-2 px-0">
           <ul>
             {CATEGORIES.map((category) => (
               <li
