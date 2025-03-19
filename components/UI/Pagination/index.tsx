@@ -27,6 +27,8 @@ export default function Pagination({
       breakLabel="..."
       breakLinkClassName="break-pagination"
       nextLabel="next"
+      previousClassName="prev-button"
+      nextClassName="next-button"
       onPageChange={handlePageChange}
       pageRangeDisplayed={3}
       marginPagesDisplayed={1}
