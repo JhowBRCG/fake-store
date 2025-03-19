@@ -5,6 +5,7 @@
 :root {
   --background: #ebebeb;
   --foreground: #171717;
+  --container-md: 700px;
 }
 
 body {
