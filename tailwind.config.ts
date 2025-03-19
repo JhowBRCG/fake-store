@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        "2xl": "1440px",
+      },
       maxWidth: {
         "container-md": "var(--container-md)",
         "container-lg": "var(--container-lg)",
