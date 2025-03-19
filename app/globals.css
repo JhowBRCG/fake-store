@@ -14,10 +14,10 @@ body {
 }
 
 .pagination {
-  @apply flex items-center justify-center overflow-hidden rounded-lg bg-white;
+  @apply m-auto flex items-center justify-center overflow-hidden rounded-lg bg-white md:w-1/2;
 
   & > li {
-    @apply w-full border text-center hover:bg-slate-300;
+    @apply w-[40px] border-x text-center hover:bg-slate-300;
   }
 
   & a {
@@ -34,5 +34,13 @@ body {
 
   & .break-pagination {
     @apply pointer-events-none bg-white;
+  }
+
+  & .prev-button {
+    @apply m-auto w-[80px] border-0;
+  }
+
+  & .next-button {
+    @apply m-auto w-[80px] border-0;
   }
 }
