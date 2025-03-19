@@ -10,6 +10,7 @@ export default {
     extend: {
       maxWidth: {
         "container-md": "var(--container-md)",
+        "container-lg": "var(--container-lg)",
       },
       colors: {
         background: "var(--background)",
