@@ -31,7 +31,7 @@ export default function SortProductByPrice() {
           <ul>
             {sortItems.map((item) => (
               <li
-                className="cursor-default px-2 py-1 text-xs capitalize hover:bg-slate-200"
+                className="cursor-default border-b px-2 py-2 text-xs capitalize hover:bg-slate-200"
                 key={item}
                 onClick={() => handleSortFilter(item)}
               >
@@ -40,7 +40,7 @@ export default function SortProductByPrice() {
             ))}
             <li
               onClick={allItems}
-              className="cursor-default px-2 py-1 text-xs capitalize hover:bg-slate-200"
+              className="cursor-default px-2 py-2 text-xs capitalize hover:bg-slate-200"
             >
               All
             </li>
