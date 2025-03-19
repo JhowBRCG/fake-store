@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        "container-md": "var(--container-md)",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
