@@ -13,6 +13,8 @@ export function useHandleSearch() {
     if (!searchQuery) return;
 
     const params = new URLSearchParams(searchParams.toString());
+
+    params.delete("page");
     params.set("q", searchQuery.toString());
 
     const newPath = pathName.startsWith("/category")
