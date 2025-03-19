@@ -13,6 +13,7 @@ export default function ProductCard({ product }: productCardProps) {
           src={product.images[0]}
           className="m-auto object-contain"
           fill
+          priority
           sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 300px"
           alt={product.title}
         />
