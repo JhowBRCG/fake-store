@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={`${inter.variable} antialiased`}>
         <QueryProvider>
           <Header />
-          <div className="m-auto md:max-w-[700px]">{children}</div>
+          <div className="md:max-w-container-md m-auto">{children}</div>
         </QueryProvider>
       </body>
     </html>
