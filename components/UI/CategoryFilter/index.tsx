@@ -33,14 +33,14 @@ export default function CategoryFilter() {
               <li
                 onClick={() => handleCategory(category)}
                 key={category}
-                className="cursor-default px-2 py-1 text-xs capitalize hover:bg-slate-200"
+                className="cursor-default border-b px-2 py-2 text-xs capitalize hover:bg-slate-200"
               >
                 {formatCategory(category)}
               </li>
             ))}
             <li
               onClick={showAllProducts}
-              className="cursor-default px-2 py-1 text-xs capitalize hover:bg-slate-200"
+              className="cursor-default px-2 py-2 text-xs capitalize hover:bg-slate-200"
             >
               All
             </li>
