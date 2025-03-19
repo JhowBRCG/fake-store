@@ -8,13 +8,15 @@ type productCardProps = {
 export default function ProductCard({ product }: productCardProps) {
   return (
     <article className="h-full bg-white px-4 py-6" key={product.id}>
-      <Image
-        src={product.images[0]}
-        className="m-auto"
-        width={300}
-        height={300}
-        alt={product.title}
-      />
+      <div className="relative h-[200px] w-full">
+        <Image
+          src={product.images[0]}
+          className="m-auto object-contain"
+          fill
+          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 300px"
+          alt={product.title}
+        />
+      </div>
       <h2 className="text-center text-sm">{product.title}</h2>
       <p className="mt-3 text-center">${product.price}</p>
     </article>
