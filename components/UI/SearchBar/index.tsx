@@ -14,7 +14,7 @@ export default function SearchBar() {
         value={searchQuery}
         name="search-bar"
         type="text"
-        className="h-[35px] w-[215px] rounded-md pl-4 pr-8 focus:outline-1 focus:outline-black"
+        className="h-[35px] w-[215px] rounded-md pl-4 pr-8 focus:outline-1 focus:outline-black md:w-[400px]"
       />
       <button className="absolute inset-0 my-auto ml-auto h-[35px] w-[32px] cursor-pointer">
         <span className="absolute left-0 h-[0.1px] w-full -translate-x-[16px] rotate-90 bg-slate-200" />
