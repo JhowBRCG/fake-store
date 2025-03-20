@@ -28,19 +28,19 @@ export default function CategoryFilter() {
       </div>
       {isFilterOpen && (
         <div className="absolute z-[5] mt-2 w-full rounded-lg bg-slate-50 p-2 px-0">
-          <ul>
+          <ul className="relative grid grid-cols-2">
             {CATEGORIES.map((category) => (
               <li
                 onClick={() => handleCategory(category)}
                 key={category}
-                className="cursor-default border-b px-2 py-2 text-xs capitalize hover:bg-slate-200"
+                className="cursor-default border-b border-r px-2 py-2 text-xs capitalize hover:bg-slate-200"
               >
                 {formatCategory(category)}
               </li>
             ))}
             <li
               onClick={showAllProducts}
-              className="cursor-default px-2 py-2 text-xs capitalize hover:bg-slate-200"
+              className="col-span-2 cursor-default px-2 py-2 text-center text-xs capitalize hover:bg-slate-200"
             >
               All
             </li>
