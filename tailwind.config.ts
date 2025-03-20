@@ -14,6 +14,7 @@ export default {
       maxWidth: {
         "container-md": "var(--container-md)",
         "container-lg": "var(--container-lg)",
+        "container-2xl": "var(--container-2xl)",
       },
       colors: {
         background: "var(--background)",
