@@ -33,9 +33,11 @@ export default function ProductsCategory({
   return (
     <section>
       <ProductList products={data?.products || []} />
-      <nav className="mt-4">
-        <Pagination currentPage={currentPage} totalPages={totalPages} />
-      </nav>
+      {totalPages > 1 && (
+        <nav className="mt-4">
+          <Pagination currentPage={currentPage} totalPages={totalPages} />
+        </nav>
+      )}
     </section>
   );
 }
