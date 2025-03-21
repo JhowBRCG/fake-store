@@ -29,7 +29,7 @@ export default function Products() {
   return (
     <section>
       {showSearchQuery && (
-        <p className="mt-3 uppercase">
+        <p className="mt-3 uppercase italic">
           The results for: <strong>{showSearchQuery}</strong>
         </p>
       )}
