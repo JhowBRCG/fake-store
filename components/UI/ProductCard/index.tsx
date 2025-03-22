@@ -1,11 +1,14 @@
 import Image from "next/image";
 import { productProps } from "@/lib/@types/productProps";
+import DiscountPercentage from "../DiscountPercentage";
 
 type productCardProps = {
   product: productProps;
 };
 
 export default function ProductCard({ product }: productCardProps) {
+  const discount = Math.floor(product.discountPercentage);
+
   return (
     <article className="h-full bg-white" key={product.id}>
       <div className="relative h-[200px] w-full border-b">
@@ -20,7 +23,10 @@ export default function ProductCard({ product }: productCardProps) {
       </div>
       <div className="px-[8px] py-[15px]">
         <h2 className="text-sm">{product.title}</h2>
-        <p className="mt-[7px]">${product.price}</p>
+        <div className="flex items-center gap-1">
+          <p className="mt-[7px]">${product.price}</p>
+          <DiscountPercentage discount={discount} />
+        </div>
       </div>
     </article>
   );
