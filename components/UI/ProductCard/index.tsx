@@ -23,7 +23,7 @@ export default function ProductCard({ product }: productCardProps) {
           alt={product.title}
         />
       </div>
-      <div className="px-[8px] py-[15px]">
+      <div className="px-[10px] py-[15px]">
         <h2>{product.title}</h2>
         <div className="flex items-center gap-1">
           <p className="mt-[7px]">${product.price}</p>
