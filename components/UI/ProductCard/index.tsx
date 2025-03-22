@@ -7,8 +7,8 @@ type productCardProps = {
 
 export default function ProductCard({ product }: productCardProps) {
   return (
-    <article className="h-full bg-white px-4 py-6" key={product.id}>
-      <div className="relative h-[200px] w-full">
+    <article className="h-full bg-white" key={product.id}>
+      <div className="relative h-[200px] w-full border-b">
         <Image
           src={product.images[0]}
           className="m-auto object-contain"
@@ -18,8 +18,10 @@ export default function ProductCard({ product }: productCardProps) {
           alt={product.title}
         />
       </div>
-      <h2 className="text-center text-sm">{product.title}</h2>
-      <p className="mt-3 text-center">${product.price}</p>
+      <div className="px-[8px] py-[15px]">
+        <h2 className="text-sm">{product.title}</h2>
+        <p className="mt-[7px]">${product.price}</p>
+      </div>
     </article>
   );
 }
