@@ -22,13 +22,13 @@ export default function CategoryFilter({ className }: { className: string }) {
     <div className={`relative w-full ${cn(className)}`}>
       <div
         onClick={toggleFilter}
-        className="flex w-full cursor-pointer items-center justify-between rounded-lg border-2 border-black bg-slate-50 px-2 py-1"
+        className="flex w-full cursor-pointer items-center justify-between rounded-lg bg-white px-2 py-[5px]"
       >
         <p className="text-center text-xs capitalize">{currentCategory}</p>
         <Icon className="text-base" />
       </div>
       {isFilterOpen && (
-        <div className="absolute z-[5] mt-2 w-full rounded-lg bg-slate-50 p-2 px-0">
+        <div className="absolute z-[5] mt-2 w-full rounded-lg bg-white p-2 px-0 shadow-md">
           <ul className="relative grid grid-cols-2">
             {CATEGORIES.map((category) => (
               <li
