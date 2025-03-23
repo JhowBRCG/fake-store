@@ -27,7 +27,7 @@ export function useProductSortPrice() {
     if (orderOption === "asc") return "Ascending";
     if (orderOption === "desc") return "Descending";
 
-    return "Sorty by price";
+    return "Price";
   };
 
   return {
