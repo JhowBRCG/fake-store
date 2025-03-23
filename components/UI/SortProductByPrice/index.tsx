@@ -2,10 +2,15 @@
 
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useProductSortPrice } from "@/lib/hooks/useProductSortPrice";
+import { cn } from "@/lib/utils/cn";
 
 const sortItems = ["asc", "desc"];
 
-export default function SortProductByPrice() {
+export default function SortProductByPrice({
+  className,
+}: {
+  className: string;
+}) {
   const {
     isFilterOpen,
     toggleFilter,
@@ -17,7 +22,7 @@ export default function SortProductByPrice() {
   const Icon = isFilterOpen ? IoIosArrowUp : IoIosArrowDown;
 
   return (
-    <div className="relative w-full">
+    <div className={`relative ${cn(className)}`}>
       <div
         onClick={toggleFilter}
         className="flex w-full cursor-pointer items-center justify-between rounded-lg border-2 border-black bg-slate-50 px-2 py-1"
