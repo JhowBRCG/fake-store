@@ -11,13 +11,8 @@ export default function SortProductByPrice({
 }: {
   className: string;
 }) {
-  const {
-    isFilterOpen,
-    toggleFilter,
-    handleSortFilter,
-    allItems,
-    getCurrentSortOrder,
-  } = useProductSortPrice();
+  const { isFilterOpen, toggleFilter, handleSortFilter, getCurrentSortOrder } =
+    useProductSortPrice();
 
   const Icon = isFilterOpen ? IoIosArrowUp : IoIosArrowDown;
 
@@ -43,12 +38,6 @@ export default function SortProductByPrice({
                 {item === "asc" ? "ascending" : "descending"}
               </li>
             ))}
-            <li
-              onClick={allItems}
-              className="cursor-default px-2 py-2 text-xs capitalize hover:bg-slate-200"
-            >
-              All
-            </li>
           </ul>
         </div>
       )}
