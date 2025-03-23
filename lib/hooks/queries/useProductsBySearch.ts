@@ -1,5 +1,5 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import { getProductsBySearch } from "../services/getProductsBySearch";
+import { getProductsBySearch } from "../../services/getProductsBySearch";
 
 export function useProductsBySearch(
   query: string,

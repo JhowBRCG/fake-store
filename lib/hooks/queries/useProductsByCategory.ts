@@ -1,5 +1,5 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import { getProductsByCategory } from "../services/getProductsByCategory";
+import { getProductsByCategory } from "../../services/getProductsByCategory";
 
 export function useProductsByCategory(
   category: string,

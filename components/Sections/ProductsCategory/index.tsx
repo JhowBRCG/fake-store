@@ -3,7 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import ProductList from "@/components/ProductList";
 import Pagination from "@/components/UI/Pagination";
-import { useProductsByCategory } from "@/lib/hooks/useProductsByCategory";
+import { useProductsByCategory } from "@/lib/hooks/queries/useProductsByCategory";
 import calculateTotalPages from "@/lib/utils/calculateTotalPages";
 
 type ProductsCategoryProps = {
