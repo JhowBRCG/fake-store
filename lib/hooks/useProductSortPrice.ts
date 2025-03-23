@@ -9,11 +9,6 @@ export function useProductSortPrice() {
   const toggleFilter = () => setIsFilterOpen((prev) => !prev);
   const closeFilter = () => setIsFilterOpen(false);
 
-  const allItems = () => {
-    router.push("/");
-    closeFilter();
-  };
-
   const handleSortFilter = (value: string) => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("sort", "price".toString());
@@ -33,7 +28,6 @@ export function useProductSortPrice() {
   return {
     isFilterOpen,
     toggleFilter,
-    allItems,
     handleSortFilter,
     getCurrentSortOrder,
   };
