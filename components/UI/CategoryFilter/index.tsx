@@ -5,8 +5,9 @@ import { CATEGORIES } from "@/config";
 import { usePathname } from "next/navigation";
 import { formatCategory } from "@/lib/utils/formatCategory";
 import { useCategoryFilter } from "@/lib/hooks/useCategoryFilter";
+import { cn } from "@/lib/utils/cn";
 
-export default function CategoryFilter() {
+export default function CategoryFilter({ className }: { className: string }) {
   const pathName = usePathname();
   const { toggleFilter, handleCategory, isFilterOpen, showAllProducts } =
     useCategoryFilter();
@@ -18,7 +19,7 @@ export default function CategoryFilter() {
   const Icon = isFilterOpen ? IoIosArrowUp : IoIosArrowDown;
 
   return (
-    <div className="relative w-full">
+    <div className={`relative w-full ${cn(className)}`}>
       <div
         onClick={toggleFilter}
         className="flex w-full cursor-pointer items-center justify-between rounded-lg border-2 border-black bg-slate-50 px-2 py-1"
