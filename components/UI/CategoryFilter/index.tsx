@@ -18,7 +18,7 @@ export default function CategoryFilter() {
   const Icon = isFilterOpen ? IoIosArrowUp : IoIosArrowDown;
 
   return (
-    <div className="relative w-full max-w-[50%]">
+    <div className="relative w-full">
       <div
         onClick={toggleFilter}
         className="flex w-full cursor-pointer items-center justify-between rounded-lg border-2 border-black bg-slate-50 px-2 py-1"
