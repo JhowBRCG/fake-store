@@ -19,8 +19,12 @@ export function useSortByPrice() {
 
   const getCurrentSortOrder = () => {
     const orderOption = searchParams.get("order")?.toString();
-    if (orderOption === "asc") return "Ascending";
-    if (orderOption === "desc") return "Descending";
+    const sortOption = searchParams.get("sort")?.toString();
+
+    if (sortOption === "price") {
+      if (orderOption === "asc") return "Ascending";
+      if (orderOption === "desc") return "Descending";
+    }
 
     return "Price";
   };
