@@ -27,7 +27,7 @@ export default function ProductCard({ product }: productCardProps) {
         <h2>{product.title}</h2>
         <div className="flex items-center gap-1">
           <p className="mt-[7px]">${product.price}</p>
-          <DiscountPercentage discount={discount} />
+          {discount > 0 && <DiscountPercentage discount={discount} />}
         </div>
         <div className="mt-[8px] flex items-center">
           <div className="flex items-center gap-1 border-r pr-[4px]">
