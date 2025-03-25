@@ -2,7 +2,7 @@ import { CATEGORIES } from "@/config";
 import { formatCategory } from "@/lib/utils/formatCategory";
 import { cn } from "@/lib/utils/cn";
 
-export default function SideBar({
+export default function CategoryDrawer({
   handleCategory,
   showAllProducts,
   isFilterOpen,
