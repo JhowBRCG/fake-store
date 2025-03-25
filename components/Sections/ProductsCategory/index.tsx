@@ -5,6 +5,7 @@ import ProductList from "@/components/ProductList";
 import Pagination from "@/components/UI/Pagination";
 import { useProductsByCategory } from "@/lib/hooks/queries/useProductsByCategory";
 import calculateTotalPages from "@/lib/utils/calculateTotalPages";
+import { formatCategory } from "@/lib/utils/formatCategory";
 
 type ProductsCategoryProps = {
   categoryName: string;
@@ -32,6 +33,9 @@ export default function ProductsCategory({
 
   return (
     <section>
+      <p className="mt-3 uppercase italic">
+        Category: <strong>{formatCategory(categoryName)}</strong>
+      </p>
       <ProductList products={data?.products || []} />
       {totalPages > 1 && (
         <nav className="mt-4">
