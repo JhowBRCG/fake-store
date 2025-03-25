@@ -11,12 +11,12 @@ export default function CategoryDrawer({
   showAllProducts: () => void;
   isFilterOpen: boolean;
 }) {
-  const animation = isFilterOpen ? "translate-y-0" : "translate-y-[999px]";
+  const animation = isFilterOpen ? "translate-y-0" : "translate-y-full";
 
   return (
     <nav
       className={cn(
-        "absolute bottom-0 left-0 z-10 w-svw overflow-y-scroll bg-neutral-200 transition",
+        "fixed bottom-0 left-0 z-10 w-svw overflow-y-scroll bg-neutral-200 transition-transform duration-200",
         animation,
       )}
     >
