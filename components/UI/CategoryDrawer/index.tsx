@@ -1,15 +1,25 @@
 import { CATEGORIES } from "@/config";
 import { formatCategory } from "@/lib/utils/formatCategory";
+import { cn } from "@/lib/utils/cn";
 
 export default function SideBar({
   handleCategory,
   showAllProducts,
+  isFilterOpen,
 }: {
   handleCategory: (category: string) => void;
   showAllProducts: () => void;
+  isFilterOpen: boolean;
 }) {
+  const animation = isFilterOpen ? "translate-y-0" : "translate-y-[999px]";
+
   return (
-    <nav className="absolute bottom-0 left-0 z-10 w-svw overflow-y-scroll bg-neutral-200">
+    <nav
+      className={cn(
+        "absolute bottom-0 left-0 z-10 w-svw overflow-y-scroll bg-neutral-200 transition",
+        animation,
+      )}
+    >
       <ul className="grid grid-cols-2">
         {CATEGORIES.map((category) => (
           <li
