@@ -11,9 +11,18 @@ export default function CategoryFilter({ className }: { className: string }) {
 
   useDisableScroll(isFilterOpen);
 
+  const activateCategoryClass = isFilterOpen
+    ? "bg-red-400 text-white"
+    : "bg-white";
+
   return (
     <div className={`w-full ${cn(className)}`} onClick={toggleFilter}>
-      <div className="w-full cursor-pointer rounded-lg bg-white px-2 py-[5px]">
+      <div
+        className={cn(
+          "w-full cursor-pointer rounded-lg px-2 py-[5px]",
+          activateCategoryClass,
+        )}
+      >
         <p className="text-center text-xs capitalize">categories</p>
       </div>
       <CategoryDrawer
