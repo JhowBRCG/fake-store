@@ -16,12 +16,11 @@ export default function CategoryFilter({ className }: { className: string }) {
       <div className="w-full cursor-pointer rounded-lg bg-white px-2 py-[5px]">
         <p className="text-center text-xs capitalize">categories</p>
       </div>
-      {isFilterOpen && (
-        <CategoryDrawer
-          handleCategory={handleCategory}
-          showAllProducts={showAllProducts}
-        />
-      )}
+      <CategoryDrawer
+        handleCategory={handleCategory}
+        showAllProducts={showAllProducts}
+        isFilterOpen={isFilterOpen}
+      />
     </div>
   );
 }
