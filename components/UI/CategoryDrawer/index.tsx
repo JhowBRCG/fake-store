@@ -20,7 +20,7 @@ export default function CategoryDrawer({
         animation,
       )}
     >
-      <ul className="grid grid-cols-2">
+      <ul className="grid grid-cols-2 md:grid-cols-3">
         {CATEGORIES.map((category) => (
           <li
             className="cursor-pointer text-nowrap border border-neutral-400 p-1 text-center text-sm capitalize hover:bg-red-400 hover:text-white"
@@ -31,7 +31,7 @@ export default function CategoryDrawer({
           </li>
         ))}
         <li
-          className="col-span-2 cursor-pointer border-t border-neutral-400 p-1 text-center text-sm hover:bg-red-400 hover:text-white"
+          className="col-span-full cursor-pointer border-t border-neutral-400 p-1 text-center text-sm hover:bg-red-400 hover:text-white"
           onClick={showAllProducts}
         >
           All
