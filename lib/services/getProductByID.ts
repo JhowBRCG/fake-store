@@ -1,4 +1,4 @@
-import { apiResponse } from "../@types/productProps";
+import { productProps } from "../@types/productProps";
 import { API_URL } from "@/config";
 
 export async function getProductByID(productID: number) {
@@ -8,5 +8,5 @@ export async function getProductByID(productID: number) {
 
   const data = await response.json();
 
-  return data as apiResponse;
+  return data as productProps;
 }
