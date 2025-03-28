@@ -2,6 +2,7 @@ import Image from "next/image";
 import { productProps } from "@/lib/@types/productProps";
 import DiscountPercentage from "../DiscountPercentage";
 import { FaStar } from "react-icons/fa";
+import { formatRating } from "@/lib/utils/formatRating";
 
 type productCardProps = {
   product: productProps;
@@ -9,7 +10,7 @@ type productCardProps = {
 
 export default function ProductCard({ product }: productCardProps) {
   const discount = Math.floor(product.discountPercentage);
-  const rating = product.rating.toPrecision(2);
+  const rating = formatRating(product.rating);
 
   return (
     <article className="h-full bg-white" key={product.id}>
