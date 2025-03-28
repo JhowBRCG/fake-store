@@ -17,10 +17,7 @@ export function useHandleSearch() {
     params.delete("page");
     params.set("q", searchQuery.toString());
 
-    const newPath = pathName.startsWith("/category")
-      ? `/?${params}`
-      : `?${params}`;
-    router.push(newPath);
+    router.push(`/?${params}`);
 
     setSearchQuery("");
   };
