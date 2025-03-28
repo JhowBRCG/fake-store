@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export function useHandleSearch() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const searchParams = useSearchParams();
   const router = useRouter();
-  const pathName = usePathname();
 
   const handleSubmitSearchQuery = (e: React.FormEvent) => {
     e.preventDefault();
