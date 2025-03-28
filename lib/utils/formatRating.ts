@@ -1,3 +1,3 @@
 export function formatRating(rating: number) {
-  return rating.toPrecision(2);
+  return Number(rating.toPrecision(2));
 }
