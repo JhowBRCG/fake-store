@@ -3,6 +3,7 @@ import { productProps } from "@/lib/@types/productProps";
 import DiscountPercentage from "../DiscountPercentage";
 import { FaStar } from "react-icons/fa";
 import { formatRating } from "@/lib/utils/formatRating";
+import { formatPrice } from "@/lib/utils/formatPrice";
 
 type productCardProps = {
   product: productProps;
@@ -11,6 +12,7 @@ type productCardProps = {
 export default function ProductCard({ product }: productCardProps) {
   const discount = Math.floor(product.discountPercentage);
   const rating = formatRating(product.rating);
+  const price = formatPrice(product.price);
 
   return (
     <article className="h-full bg-white" key={product.id}>
@@ -27,7 +29,7 @@ export default function ProductCard({ product }: productCardProps) {
       <div className="px-[10px] py-[15px]">
         <h2>{product.title}</h2>
         <div className="flex items-center gap-1">
-          <p className="mt-[7px]">${product.price}</p>
+          <p className="mt-[7px]">{price}</p>
           {discount > 0 && <DiscountPercentage discount={discount} />}
         </div>
         <div className="mt-[8px] flex items-center">
