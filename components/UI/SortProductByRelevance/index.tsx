@@ -15,10 +15,10 @@ export default function SortProductByPrice({
     : "bg-white";
 
   return (
-    <div className={`relative ${cn(className)}`} onClick={handleRelevanceSort}>
+    <div className={cn(className)} onClick={handleRelevanceSort}>
       <div
         className={cn(
-          "flex w-full cursor-pointer items-center justify-between rounded-lg border-black px-2 py-[5px]",
+          "cursor-pointer rounded-lg px-2 py-[5px]",
           activateRelevanceClass,
         )}
       >
