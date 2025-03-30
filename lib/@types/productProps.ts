@@ -13,6 +13,7 @@ export type productProps = {
     height: number;
     depth: number;
   };
+  warrantyInformation: string;
 };
 
 export type apiResponse = {
