@@ -8,6 +8,11 @@ export type productProps = {
   stock: number;
   brand: string;
   images: string[];
+  dimensions: {
+    width: number;
+    height: number;
+    depth: number;
+  };
 };
 
 export type apiResponse = {
