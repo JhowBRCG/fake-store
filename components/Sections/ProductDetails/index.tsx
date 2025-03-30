@@ -26,7 +26,7 @@ export default function ProductDetails({ productID }: { productID: string }) {
         <RatingStars rating={rating} />
       </div>
       <h1 className="text-center text-lg">{data?.title}</h1>
-      <div className="relative m-auto h-[228px] max-w-[200px]">
+      <div className="relative m-auto h-[228px] max-w-[200px] md:h-[270px] md:max-w-[300px]">
         {data && (
           <Image
             src={data?.images[0]}
