@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Layout/Header";
+import Header from "@/components/layout/Header";
 import QueryProvider from "@/lib/providers/QueryProvider";
 
 const inter = Inter({
@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={`${inter.variable} antialiased`}>
         <QueryProvider>
           <Header />
-          <div className="md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container-2xl m-auto">
+          <div className="m-auto md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container-2xl">
             {children}
           </div>
         </QueryProvider>
