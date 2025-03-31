@@ -26,18 +26,16 @@ export default function ProductDetails({ productID }: { productID: string }) {
         <RatingStars rating={rating} />
       </div>
       <h1 className="text-center text-lg">{data?.title}</h1>
-      <div className="relative m-auto h-[228px] max-w-[200px] md:h-[270px] md:max-w-[300px]">
-        {data && (
-          <Image
-            src={data?.images[0]}
-            className="object-contain pb-7"
-            fill
-            priority
-            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 300px"
-            alt={data?.title}
-          />
-        )}
-      </div>
+      {data && (
+        <Image
+          src={data?.images[0]}
+          className="mx-auto pb-7 md:w-[270px]"
+          width={200}
+          height={200}
+          priority
+          alt={data?.title}
+        />
+      )}
       <div className="flex divide-x-[1px] border-y py-3 text-center">
         <div className="flex-1">
           <p>Discount: </p>
