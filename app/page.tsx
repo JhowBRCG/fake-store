@@ -1,4 +1,4 @@
-import Products from "@/components/Sections/Products";
+import Products from "@/components/sections/Products";
 import FilterProducts from "@/components/products/FilterProducts";
 
 export default function Home() {

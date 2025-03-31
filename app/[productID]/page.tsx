@@ -1,4 +1,4 @@
-import ProductDetails from "@/components/Sections/ProductDetails";
+import ProductDetails from "@/components/sections/ProductDetails";
 
 export default async function page({
   params,
