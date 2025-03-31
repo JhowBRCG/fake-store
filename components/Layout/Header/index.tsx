@@ -1,5 +1,5 @@
-import Cart from "../../UI/Cart";
-import SearchBar from "../../UI/SearchBar";
+import Cart from "../../ui/Cart";
+import SearchBar from "../../ui/SearchBar";
 import Link from "next/link";
 
 export default function Header() {

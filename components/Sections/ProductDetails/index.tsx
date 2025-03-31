@@ -5,8 +5,8 @@ import { formatRating } from "@/lib/utils/formatRating";
 import { CalculateOriginalPrice } from "@/lib/utils/calculateOriginalPrice";
 import { formatPrice } from "@/lib/utils/formatPrice";
 import Image from "next/image";
-import RatingStars from "@/components/UI/RatingStars";
-import Accordion from "@/components/UI/Accordion";
+import RatingStars from "@/components/ui/RatingStars";
+import Accordion from "@/components/ui/Accordion";
 
 export default function ProductDetails({ productID }: { productID: string }) {
   const { data, isLoading } = useProductsByID(productID);

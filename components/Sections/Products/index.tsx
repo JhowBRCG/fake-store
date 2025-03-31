@@ -2,11 +2,11 @@
 
 import { useSearchParams } from "next/navigation";
 import ProductList from "@/components/products/ProductList";
-import Pagination from "@/components/UI/Pagination";
+import Pagination from "@/components/ui/Pagination";
 import { useProducts } from "@/lib/hooks/queries/useProducts";
 import { useProductsBySearch } from "@/lib/hooks/queries/useProductsBySearch";
 import calculateTotalPages from "@/lib/utils/calculateTotalPages";
-import ProductsNotFound from "@/components/UI/ProductsNotFound";
+import ProductsNotFound from "@/components/ui/ProductsNotFound";
 
 export default function Products() {
   const searchParams = useSearchParams();

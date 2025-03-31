@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import ProductList from "@/components/products/ProductList";
-import Pagination from "@/components/UI/Pagination";
+import Pagination from "@/components/ui/Pagination";
 import { useProductsByCategory } from "@/lib/hooks/queries/useProductsByCategory";
 import calculateTotalPages from "@/lib/utils/calculateTotalPages";
 import { formatCategory } from "@/lib/utils/formatCategory";
