@@ -1,5 +1,5 @@
 import Products from "@/components/Sections/Products";
-import FilterProducts from "@/components/FilterProducts";
+import FilterProducts from "@/components/products/FilterProducts";
 
 export default function Home() {
   return (

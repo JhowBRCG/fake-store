@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import ProductList from "@/components/ProductList";
+import ProductList from "@/components/products/ProductList";
 import Pagination from "@/components/UI/Pagination";
 import { useProducts } from "@/lib/hooks/queries/useProducts";
 import { useProductsBySearch } from "@/lib/hooks/queries/useProductsBySearch";

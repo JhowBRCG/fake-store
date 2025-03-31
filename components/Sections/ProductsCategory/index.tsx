@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import ProductList from "@/components/ProductList";
+import ProductList from "@/components/products/ProductList";
 import Pagination from "@/components/UI/Pagination";
 import { useProductsByCategory } from "@/lib/hooks/queries/useProductsByCategory";
 import calculateTotalPages from "@/lib/utils/calculateTotalPages";

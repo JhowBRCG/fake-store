@@ -1,6 +1,6 @@
-import CategoryFilter from "../UI/CategoryFilter";
-import SortProductByPrice from "../UI/SortProductByPrice";
-import SortProductByRelevance from "../UI/SortProductByRelevance";
+import CategoryFilter from "../CategoryFilter";
+import SortProductByPrice from "../SortProductByPrice";
+import SortProductByRelevance from "../SortProductByRelevance";
 
 export default function FilterProducts() {
   return (

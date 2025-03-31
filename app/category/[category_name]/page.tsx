@@ -1,4 +1,4 @@
-import FilterProducts from "@/components/FilterProducts";
+import FilterProducts from "@/components/products/FilterProducts";
 import ProductsCategory from "@/components/Sections/ProductsCategory";
 
 export default async function page({
