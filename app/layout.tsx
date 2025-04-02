@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import QueryProvider from "@/lib/providers/QueryProvider";
+import ReduxProvider from "@/lib/providers/ReduxProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,10 +24,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
         <QueryProvider>
-          <Header />
-          <div className="m-auto md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container-2xl">
-            {children}
-          </div>
+          <ReduxProvider>
+            <Header />
+            <div className="m-auto md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container-2xl">
+              {children}
+            </div>
+          </ReduxProvider>
         </QueryProvider>
       </body>
     </html>
