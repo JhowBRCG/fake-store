@@ -7,6 +7,7 @@ import { formatPrice } from "@/lib/utils/formatPrice";
 import Image from "next/image";
 import RatingStars from "@/components/ui/RatingStars";
 import Accordion from "@/components/ui/Accordion";
+import AddToCartButton from "@/components/products/AddToCartButton";
 
 export default function ProductDetails({ productID }: { productID: string }) {
   const { data, isLoading } = useProductsByID(productID);
@@ -55,10 +56,8 @@ export default function ProductDetails({ productID }: { productID: string }) {
       </div>
 
       <div className="col-start-2 mb-[50px] flex gap-3 p-4 lg:flex-col">
-        <button className="flex-1 cursor-pointer rounded-md bg-[#F2CC8F] p-[9px] font-semibold">
-          ADD TO CART
-        </button>
-        <button className="flex-1 cursor-pointer rounded-md bg-[#81B29A] p-[9px] font-semibold">
+        <AddToCartButton product={data} />
+        <button className="w-full cursor-pointer rounded-md bg-[#81B29A] p-[9px] font-semibold">
           BUY
         </button>
       </div>
