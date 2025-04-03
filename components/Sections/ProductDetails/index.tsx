@@ -2,7 +2,7 @@
 
 import { useProductsByID } from "@/lib/hooks/queries/useProductsByID";
 import { formatRating } from "@/lib/utils/formatRating";
-import { CalculateOriginalPrice } from "@/lib/utils/calculateOriginalPrice";
+import { calculateOriginalPrice } from "@/lib/utils/calculateOriginalPrice";
 import { formatPrice } from "@/lib/utils/formatPrice";
 import { RatingStars, Accordion } from "@/components/ui";
 import { AddToCartButton } from "@/components/products";
@@ -15,7 +15,7 @@ export default function ProductDetails({ productID }: { productID: string }) {
   const ratingFormatted = formatRating(rating);
   const discount = Math.floor(discountPercentage);
   const priceFormatted = formatPrice(price);
-  const originalPrice = formatPrice(CalculateOriginalPrice(price, discount));
+  const originalPrice = formatPrice(calculateOriginalPrice(price, discount));
 
   if (isLoading) return <p>Loading...</p>;
 
