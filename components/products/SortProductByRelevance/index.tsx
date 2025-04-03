@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils/cn";
 import { useSortByRelevance } from "@/lib/hooks/useSortByRelevance";
 
-export default function SortProductByPrice({
+export default function SortProductByRelevance({
   className,
 }: {
   className: string;
