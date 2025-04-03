@@ -4,10 +4,9 @@ import { useProductsByID } from "@/lib/hooks/queries/useProductsByID";
 import { formatRating } from "@/lib/utils/formatRating";
 import { CalculateOriginalPrice } from "@/lib/utils/calculateOriginalPrice";
 import { formatPrice } from "@/lib/utils/formatPrice";
+import { RatingStars, Accordion } from "@/components/ui";
+import { AddToCartButton } from "@/components/products";
 import Image from "next/image";
-import RatingStars from "@/components/ui/RatingStars";
-import Accordion from "@/components/ui/Accordion";
-import AddToCartButton from "@/components/products/AddToCartButton";
 
 export default function ProductDetails({ productID }: { productID: string }) {
   const { data, isLoading } = useProductsByID(productID);
