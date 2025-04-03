@@ -2,8 +2,7 @@ import Image from "next/image";
 import { productProps } from "@/lib/@types/productProps";
 import DiscountPercentage from "../../ui/DiscountPercentage";
 import { FaStar } from "react-icons/fa";
-import { formatRating } from "@/lib/utils/formatRating";
-import { formatPrice } from "@/lib/utils/formatPrice";
+import { formatRating, formatPrice } from "@/lib/utils";
 
 type productCardProps = {
   product: productProps;
