@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import { formatPrice } from "@/lib/utils";
 import { FaWindowClose } from "react-icons/fa";
+import { removeFromCart } from "@/store/cartSlice";
+import { useDispatch } from "react-redux";
 
 type ProductCartProps = {
   product: {
@@ -14,10 +18,14 @@ type ProductCartProps = {
 
 export default function ProductCart({ product }: ProductCartProps) {
   const formattedPrice = formatPrice(product.price);
+  const dispatch = useDispatch();
 
   return (
     <article className="relative bg-white p-4">
-      <button className="absolute right-0 top-0 -translate-x-[16px] translate-y-[16px] cursor-pointer">
+      <button
+        onClick={() => dispatch(removeFromCart(product))}
+        className="absolute right-0 top-0 -translate-x-[16px] translate-y-[16px] cursor-pointer"
+      >
         <FaWindowClose className="text-lg text-neutral-400" />
       </button>
       <div className="grid grid-cols-[40%_60%] items-center gap-3">
