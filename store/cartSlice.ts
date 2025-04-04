@@ -31,12 +31,12 @@ export const cartSlice = createSlice({
       );
 
       if (existingProduct) {
-        existingProduct.quantity += 1;
+        existingProduct.quantity++;
       } else {
         state.carts.push({ ...action.payload, quantity: 1 });
       }
 
-      state.totalProducts += 1;
+      state.totalProducts++;
       state.totalPrice += action.payload.price;
     },
     removeFromCart: (state, action: PayloadAction<CartItem>) => {
@@ -47,7 +47,7 @@ export const cartSlice = createSlice({
       if (!existingProduct) return;
 
       if (existingProduct?.quantity > 1) {
-        existingProduct.quantity -= 1;
+        existingProduct.quantity--;
       } else {
         state.carts = state.carts.filter((product) => {
           return product.id !== action.payload.id;
