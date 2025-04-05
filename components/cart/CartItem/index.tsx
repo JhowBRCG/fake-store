@@ -6,7 +6,7 @@ import { FaWindowClose } from "react-icons/fa";
 import { removeFromCart } from "@/store/cartSlice";
 import { useDispatch } from "react-redux";
 
-type ProductCartProps = {
+type CartItemProps = {
   product: {
     id: number;
     img: string;
@@ -16,7 +16,7 @@ type ProductCartProps = {
   };
 };
 
-export default function ProductCart({ product }: ProductCartProps) {
+export default function CartItem({ product }: CartItemProps) {
   const formattedPrice = formatPrice(product.price);
   const dispatch = useDispatch();
 
