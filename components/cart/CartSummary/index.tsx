@@ -10,6 +10,8 @@ export default function CartSummary() {
   const cartState = useSelector(selectCartState);
   const formattedPrice = formatPrice(cartState.totalPrice);
 
+  if (!cartState.totalProducts) return null;
+
   return (
     <div className="mt-[33px] bg-[#F5F5F5] p-4">
       <p>
