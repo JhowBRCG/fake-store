@@ -15,7 +15,7 @@ export default function CartHeader() {
     totalProducts > 1 && `You have ${totalProducts} products in cart`;
 
   return (
-    <p className="text-center">
+    <p className="text-center md:text-lg">
       {noProductsMessage} {singularMessage} {pluralMessage}
     </p>
   );
