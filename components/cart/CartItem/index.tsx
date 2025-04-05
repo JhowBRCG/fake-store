@@ -26,9 +26,9 @@ export default function CartItem({ product }: CartItemProps) {
         onClick={() => dispatch(removeFromCart(product))}
         className="absolute right-0 top-0 -translate-x-[16px] translate-y-[16px] cursor-pointer"
       >
-        <FaWindowClose className="text-lg text-neutral-400" />
+        <FaWindowClose className="text-lg text-neutral-400 md:text-2xl" />
       </button>
-      <div className="grid grid-cols-[40%_60%] items-center gap-3">
+      <div className="grid grid-cols-[40%_60%] items-center gap-3 md:grid-cols-[20%_80%]">
         <div className="relative h-[130px]">
           <Image
             src={product.img}
