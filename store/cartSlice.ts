@@ -10,13 +10,13 @@ type CartItem = {
 };
 
 type CartState = {
-  carts: CartItem[];
+  cartItems: CartItem[];
   totalProducts: number;
   totalPrice: number;
 };
 
 const initialState: CartState = {
-  carts: [],
+  cartItems: [],
   totalProducts: 0,
   totalPrice: 0,
 };
@@ -26,21 +26,21 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<CartItem>) => {
-      const existingProduct = state.carts.find(
+      const existingProduct = state.cartItems.find(
         (product) => product.id === action.payload.id,
       );
 
       if (existingProduct) {
         existingProduct.quantity++;
       } else {
-        state.carts.push({ ...action.payload, quantity: 1 });
+        state.cartItems.push({ ...action.payload, quantity: 1 });
       }
 
       state.totalProducts++;
       state.totalPrice += action.payload.price;
     },
     removeFromCart: (state, action: PayloadAction<CartItem>) => {
-      const existingProduct = state.carts.find(
+      const existingProduct = state.cartItems.find(
         (product) => product.id === action.payload.id,
       );
 
@@ -49,7 +49,7 @@ export const cartSlice = createSlice({
       if (existingProduct?.quantity > 1) {
         existingProduct.quantity--;
       } else {
-        state.carts = state.carts.filter((product) => {
+        state.cartItems = state.cartItems.filter((product) => {
           return product.id !== action.payload.id;
         });
       }
@@ -58,7 +58,7 @@ export const cartSlice = createSlice({
       state.totalPrice -= action.payload.price;
     },
     clearCart: (state) => {
-      state.carts = [];
+      state.cartItems = [];
       state.totalPrice = 0;
       state.totalProducts = 0;
     },
@@ -66,7 +66,7 @@ export const cartSlice = createSlice({
 });
 
 export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
-export const selectCart = (state: RootState) => state.cart.carts;
+export const selectCart = (state: RootState) => state.cart.cartItems;
 export const selectCartState = (state: RootState) => state.cart;
 
 export default cartSlice.reducer;
