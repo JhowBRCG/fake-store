@@ -2,20 +2,29 @@
 
 import { useProductsByID } from "@/lib/hooks/queries/useProductsByID";
 import { formatRating, calculateOriginalPrice, formatPrice } from "@/lib/utils";
-import { RatingStars, Accordion } from "@/components/ui";
+import { RatingStars, Accordion, ErrorMessage } from "@/components/ui";
 import { AddToCartButton } from "@/components/products";
 import Image from "next/image";
 
 export default function ProductDetails({ productID }: { productID: string }) {
-  const { data, isLoading } = useProductsByID(productID);
+  const { data, isLoading, isError } = useProductsByID(productID);
+
+  if (isError || !data)
+    return (
+      <ErrorMessage
+        message="NO PRODUCT FOUND :/"
+        goHome={true}
+        className="mt-4 p-5"
+      />
+    );
+  if (isLoading) return <p>Loading...</p>;
+
   const { rating = 0, discountPercentage = 0, price = 0 } = data || {};
 
   const ratingFormatted = formatRating(rating);
   const discount = Math.floor(discountPercentage);
   const priceFormatted = formatPrice(price);
   const originalPrice = formatPrice(calculateOriginalPrice(price, discount));
-
-  if (isLoading) return <p>Loading...</p>;
 
   return (
     <section className="rounded-sm bg-white lg:grid lg:grid-cols-[60%_40%]">
