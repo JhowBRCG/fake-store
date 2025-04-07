@@ -14,8 +14,15 @@ export function useSortByRelevance() {
 
   const handleRelevanceSort = () => {
     const params = new URLSearchParams(searchParams.toString());
-    params.set("sort", "rating".toString());
-    params.set("order", "desc".toString());
+
+    if (!isRelevanceActive) {
+      params.set("sort", "rating".toString());
+      params.set("order", "desc".toString());
+      return router.push(`?${params.toString()}`);
+    }
+
+    params.delete("sort", "rating".toString());
+    params.delete("order", "desc".toString());
     router.push(`?${params.toString()}`);
   };
 
