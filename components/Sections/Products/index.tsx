@@ -6,7 +6,7 @@ import Pagination from "@/components/ui/Pagination";
 import { useProducts } from "@/lib/hooks/queries/useProducts";
 import { useProductsBySearch } from "@/lib/hooks/queries/useProductsBySearch";
 import { calculateTotalPages } from "@/lib/utils/calculateTotalPages";
-import ProductsNotFound from "@/components/ui/ProductsNotFound";
+import ErrorMessage from "@/components/ui/ErrorMessage";
 
 export default function Products() {
   const searchParams = useSearchParams();
@@ -34,7 +34,9 @@ export default function Products() {
         </p>
       )}
       <ProductList products={data?.products || []} />
-      {data?.total === 0 && <ProductsNotFound className="mt-4 p-5" />}
+      {data?.total === 0 && (
+        <ErrorMessage message="NO PRODUCTS FOUND :/" className="mt-4 p-5" />
+      )}
       {totalPages > 1 && (
         <nav className="mt-4">
           <Pagination currentPage={currentPage} totalPages={totalPages} />
