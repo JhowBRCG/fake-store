@@ -16,7 +16,7 @@ export default function Products() {
 
   const { data, isLoading } = query ? searchResults : allProducts;
 
-  const totalPages = calculateTotalPages(data?.total || 0);
+  const totalPages = calculateTotalPages(data?.total ?? 0);
   const showSearchQuery = query;
   const hasNoResults = data?.total === 0;
 
@@ -29,7 +29,7 @@ export default function Products() {
           The results for: <strong>{showSearchQuery}</strong>
         </p>
       )}
-      <ProductList products={data?.products || []} />
+      <ProductList products={data?.products ?? []} />
       {hasNoResults && (
         <ErrorMessage message="NO PRODUCTS FOUND :/" className="mt-4 p-5" />
       )}

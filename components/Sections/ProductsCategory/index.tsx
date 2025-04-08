@@ -25,14 +25,14 @@ export default function ProductsCategory({
 
   if (isLoading) return <p>Loading...</p>;
 
-  const totalPages = calculateTotalPages(data?.total || 0);
+  const totalPages = calculateTotalPages(data?.total ?? 0);
 
   return (
     <section>
       <p className="mt-3 uppercase italic">
         Category: <strong>{formatCategory(categoryName)}</strong>
       </p>
-      <ProductList products={data?.products || []} />
+      <ProductList products={data?.products ?? []} />
       {totalPages > 1 && (
         <nav className="mt-4">
           <Pagination currentPage={currentPage} totalPages={totalPages} />

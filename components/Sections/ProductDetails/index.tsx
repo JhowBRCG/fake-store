@@ -19,7 +19,7 @@ export default function ProductDetails({ productID }: { productID: string }) {
       />
     );
 
-  const { rating = 0, discountPercentage = 0, price = 0 } = data || {};
+  const { rating = 0, discountPercentage = 0, price = 0 } = data ?? {};
 
   const ratingFormatted = formatRating(rating);
   const discount = Math.floor(discountPercentage);
@@ -35,12 +35,12 @@ export default function ProductDetails({ productID }: { productID: string }) {
       <h1 className="text-center text-lg lg:py-7">{data?.title}</h1>
 
       <Image
-        src={data?.images[0] || ""}
+        src={data?.images[0] ?? ""}
         className="mx-auto h-[228px] object-contain pb-7 md:w-[270px] lg:row-span-4 lg:h-[500px] lg:w-[500px]"
         width={400}
         height={400}
         priority
-        alt={data?.title || ""}
+        alt={data?.title ?? ""}
       />
 
       <div className="flex divide-x-[1px] border-y py-3 text-center">
@@ -73,7 +73,7 @@ export default function ProductDetails({ productID }: { productID: string }) {
           <p>{data?.description}</p>
         </Accordion>
         <Accordion title="brand">
-          <p>{data?.brand || "No brand"}</p>
+          <p>{data?.brand ?? "No brand"}</p>
         </Accordion>
         <Accordion title="dimensions">
           <p>Width: {data?.dimensions.width}</p>
