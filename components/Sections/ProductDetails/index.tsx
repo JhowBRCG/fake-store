@@ -9,6 +9,7 @@ import Image from "next/image";
 export default function ProductDetails({ productID }: { productID: string }) {
   const { data, isLoading, isError } = useProductsByID(productID);
 
+  if (isLoading) return <p>Loading...</p>;
   if (isError || !data)
     return (
       <ErrorMessage
@@ -17,7 +18,6 @@ export default function ProductDetails({ productID }: { productID: string }) {
         className="mt-4 p-5"
       />
     );
-  if (isLoading) return <p>Loading...</p>;
 
   const { rating = 0, discountPercentage = 0, price = 0 } = data || {};
 
