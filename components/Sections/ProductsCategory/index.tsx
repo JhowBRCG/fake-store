@@ -6,6 +6,7 @@ import { useProductsByCategory } from "@/lib/hooks/queries/useProductsByCategory
 import { calculateTotalPages } from "@/lib/utils/calculateTotalPages";
 import { formatCategory } from "@/lib/utils/formatCategory";
 import { useProductParams } from "@/lib/hooks/useProductParams";
+import { ErrorMessage } from "@/components/ui";
 
 type ProductsCategoryProps = {
   categoryName: string;
@@ -33,6 +34,13 @@ export default function ProductsCategory({
         Category: <strong>{formatCategory(categoryName)}</strong>
       </p>
       <ProductList products={data?.products ?? []} />
+      {!data?.total && (
+        <ErrorMessage
+          className="mt-4"
+          message="NO PRODUCTS FOUND :/"
+          goHome={true}
+        />
+      )}
       {totalPages > 1 && (
         <nav className="mt-4">
           <Pagination currentPage={currentPage} totalPages={totalPages} />
