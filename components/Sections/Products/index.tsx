@@ -31,7 +31,7 @@ export default function Products() {
       )}
       <ProductList products={data?.products ?? []} />
       {hasNoResults && (
-        <ErrorMessage message="NO PRODUCTS FOUND :/" className="mt-4 p-5" />
+        <ErrorMessage message="NO PRODUCTS FOUND :/" className="mt-5" />
       )}
       {totalPages > 1 && (
         <nav className="mt-4">
