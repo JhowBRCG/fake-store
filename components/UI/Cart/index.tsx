@@ -11,7 +11,7 @@ export default function Cart() {
   return (
     <Link href="/cart">
       <div className="relative cursor-pointer">
-        <RiShoppingCartLine className="text-2xl" />
+        <RiShoppingCartLine data-testid="cart-icon" className="text-2xl" />
         <div className="absolute right-0 top-0 min-w-3 -translate-y-3 translate-x-2 rounded-full bg-slate-500 px-1">
           <p className="text-center text-xs text-white">
             {cartState.totalProducts}
