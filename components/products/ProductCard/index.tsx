@@ -33,7 +33,10 @@ export default function ProductCard({ product }: productCardProps) {
         </div>
         <div className="mt-[8px] flex items-center">
           <div className="flex items-center gap-1 border-r pr-[4px]">
-            <FaStar className="text-xs text-[#FFBD1B]" />
+            <FaStar
+              data-testid="rating-icon"
+              className="text-xs text-[#FFBD1B]"
+            />
             <p className="text-xs">{rating}</p>
           </div>
           <p className="pl-[4px] text-xs">{product.stock} remaining</p>
