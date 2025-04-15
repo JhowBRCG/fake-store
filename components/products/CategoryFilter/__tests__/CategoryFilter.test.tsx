@@ -90,5 +90,6 @@ describe("CategoryFilter", () => {
     const wrapper = screen.getByText("categories").closest("div");
 
     expect(wrapper).toHaveClass("bg-white");
+    expect(wrapper).not.toHaveClass("bg-red-400", "text-white");
   });
 });
