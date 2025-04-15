@@ -16,7 +16,11 @@ export default function CategoryFilter({ className }: { className: string }) {
     : "bg-white";
 
   return (
-    <div className={`w-full ${cn(className)}`} onClick={toggleFilter}>
+    <div
+      className={`w-full ${cn(className)}`}
+      onClick={toggleFilter}
+      data-testid="wrapper"
+    >
       <div
         className={cn(
           "w-full cursor-pointer rounded-lg px-2 py-[5px]",
