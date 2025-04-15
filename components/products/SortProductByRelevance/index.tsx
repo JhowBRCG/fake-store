@@ -15,7 +15,11 @@ export default function SortProductByRelevance({
     : "bg-white";
 
   return (
-    <div className={cn(className)} onClick={handleRelevanceSort}>
+    <div
+      className={cn(className)}
+      data-testid="wrapper"
+      onClick={handleRelevanceSort}
+    >
       <div
         className={cn(
           "cursor-pointer rounded-lg px-2 py-[5px]",
