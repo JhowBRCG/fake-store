@@ -1,11 +1,12 @@
 "use client";
 
 import { useProductsByID } from "@/lib/hooks/queries/useProductsByID";
-import { formatRating, calculateOriginalPrice, formatPrice } from "@/lib/utils";
+import { formatRating } from "@/lib/utils";
 import { RatingStars, Accordion, ErrorMessage } from "@/components/ui";
 import { AddToCartButton } from "@/components/products";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
+import ProductPrice from "./ProductPrice";
 
 export default function ProductDetails({ productID }: { productID: string }) {
   const { data, isLoading, isError } = useProductsByID(productID);
@@ -23,9 +24,6 @@ export default function ProductDetails({ productID }: { productID: string }) {
   const { rating = 0, discountPercentage = 0, price = 0 } = data ?? {};
 
   const ratingFormatted = formatRating(rating);
-  const discount = Math.floor(discountPercentage);
-  const priceFormatted = formatPrice(price);
-  const originalPrice = formatPrice(calculateOriginalPrice(price, discount));
 
   return (
     <section className="rounded-sm bg-white lg:grid lg:grid-cols-[60%_40%]">
@@ -37,13 +35,7 @@ export default function ProductDetails({ productID }: { productID: string }) {
 
       <ProductImage src={data.images[0]} alt={data.title} />
       <ProductInfo discount={discountPercentage} stock={data.stock} />
-
-      <div className="p-5 lg:col-start-2">
-        {discount > 0 && (
-          <p className="text-sm text-[#7F858D] line-through">{originalPrice}</p>
-        )}
-        <p className="text-2xl">{priceFormatted}</p>
-      </div>
+      <ProductPrice discount={discountPercentage} price={price} />
 
       <div className="col-start-2 mb-[50px] flex gap-3 p-4 lg:flex-col">
         <AddToCartButton product={data} />
