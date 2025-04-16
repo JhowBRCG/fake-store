@@ -7,6 +7,7 @@ import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
 import ProductPrice from "./ProductPrice";
 import AddToCartButton from "./AddToCartButton";
+import BuyButton from "./BuyButton";
 
 export default function ProductDetails({ productID }: { productID: string }) {
   const { data, isLoading, isError } = useProductsByID(productID);
@@ -39,9 +40,7 @@ export default function ProductDetails({ productID }: { productID: string }) {
 
       <div className="col-start-2 mb-[50px] flex gap-3 p-4 lg:flex-col">
         <AddToCartButton product={data} />
-        <button className="w-full cursor-pointer rounded-md bg-[#81B29A] p-[9px] font-semibold">
-          BUY
-        </button>
+        <BuyButton />
       </div>
 
       <div className="divide-y-2 lg:col-span-full">
