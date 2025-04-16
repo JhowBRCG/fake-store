@@ -5,6 +5,7 @@ import { formatRating, calculateOriginalPrice, formatPrice } from "@/lib/utils";
 import { RatingStars, Accordion, ErrorMessage } from "@/components/ui";
 import { AddToCartButton } from "@/components/products";
 import ProductImage from "./ProductImage";
+import ProductInfo from "./ProductInfo";
 
 export default function ProductDetails({ productID }: { productID: string }) {
   const { data, isLoading, isError } = useProductsByID(productID);
@@ -35,17 +36,7 @@ export default function ProductDetails({ productID }: { productID: string }) {
       <h1 className="text-center text-lg lg:py-7">{data?.title}</h1>
 
       <ProductImage src={data.images[0]} alt={data.title} />
-
-      <div className="flex divide-x-[1px] border-y py-3 text-center">
-        <div className="flex-1">
-          <p>Discount: </p>
-          <p>{discount}%</p>
-        </div>
-        <div className="flex-1">
-          <p>Remaining: </p>
-          <p>{data?.stock}</p>
-        </div>
-      </div>
+      <ProductInfo discount={discountPercentage} stock={data.stock} />
 
       <div className="p-5 lg:col-start-2">
         {discount > 0 && (
