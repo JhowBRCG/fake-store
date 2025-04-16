@@ -3,10 +3,10 @@
 import { useProductsByID } from "@/lib/hooks/queries/useProductsByID";
 import { formatRating } from "@/lib/utils";
 import { RatingStars, Accordion, ErrorMessage } from "@/components/ui";
-import { AddToCartButton } from "@/components/products";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
 import ProductPrice from "./ProductPrice";
+import AddToCartButton from "./AddToCartButton";
 
 export default function ProductDetails({ productID }: { productID: string }) {
   const { data, isLoading, isError } = useProductsByID(productID);
