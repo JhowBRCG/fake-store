@@ -4,7 +4,7 @@ import { useProductsByID } from "@/lib/hooks/queries/useProductsByID";
 import { formatRating, calculateOriginalPrice, formatPrice } from "@/lib/utils";
 import { RatingStars, Accordion, ErrorMessage } from "@/components/ui";
 import { AddToCartButton } from "@/components/products";
-import Image from "next/image";
+import ProductImage from "./ProductImage";
 
 export default function ProductDetails({ productID }: { productID: string }) {
   const { data, isLoading, isError } = useProductsByID(productID);
@@ -34,14 +34,7 @@ export default function ProductDetails({ productID }: { productID: string }) {
       </div>
       <h1 className="text-center text-lg lg:py-7">{data?.title}</h1>
 
-      <Image
-        src={data?.images[0] ?? ""}
-        className="mx-auto h-[228px] object-contain pb-7 md:w-[270px] lg:row-span-4 lg:h-[500px] lg:w-[500px]"
-        width={400}
-        height={400}
-        priority
-        alt={data?.title ?? ""}
-      />
+      <ProductImage src={data.images[0]} alt={data.title} />
 
       <div className="flex divide-x-[1px] border-y py-3 text-center">
         <div className="flex-1">
