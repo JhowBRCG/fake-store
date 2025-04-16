@@ -31,6 +31,7 @@ export default function CategoryDrawer({
               className="cursor-pointer text-nowrap border-b border-neutral-400 py-2 text-center text-sm capitalize hover:bg-red-400 hover:text-white md:py-[6px]"
               key={category}
               onClick={() => handleCategory(category)}
+              data-testid="category-item"
             >
               {formatCategory(category)}
             </li>
