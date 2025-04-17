@@ -29,7 +29,7 @@ export default function Products() {
           The results for: <strong>{showSearchQuery}</strong>
         </p>
       )}
-      <ProductList products={data?.products ?? []} />
+      {!hasNoResults && <ProductList products={data?.products ?? []} />}
       {hasNoResults && (
         <ErrorMessage message="NO PRODUCTS FOUND :/" className="mt-5" />
       )}
