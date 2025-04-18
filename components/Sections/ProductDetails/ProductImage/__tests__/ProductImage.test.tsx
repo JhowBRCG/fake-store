@@ -17,7 +17,5 @@ describe("ProductImage", () => {
     const img = screen.getByAltText(altMock) as HTMLImageElement;
 
     expect(img.src).toContain(encodeURIComponent(srcMock));
-
-    screen.debug();
   });
 });
