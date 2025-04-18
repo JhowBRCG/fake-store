@@ -27,14 +27,15 @@ export default function ProductsCategory({
   if (isLoading) return <p>Loading...</p>;
 
   const totalPages = calculateTotalPages(data?.total ?? 0);
+  const hasNoResults = data?.total === 0;
 
   return (
     <section>
       <p className="mt-3 uppercase italic">
         Category: <strong>{formatCategory(categoryName)}</strong>
       </p>
-      <ProductList products={data?.products ?? []} />
-      {!data?.total && (
+      {!hasNoResults && <ProductList products={data?.products ?? []} />}
+      {hasNoResults && (
         <ErrorMessage
           className="mt-4"
           message="NO PRODUCTS FOUND :/"
