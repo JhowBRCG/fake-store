@@ -78,8 +78,6 @@ describe("ProductsCategory", () => {
 
     expect(screen.getByText("Category:")).toBeInTheDocument();
     expect(screen.getByText("laptops")).toBeInTheDocument();
-
-    screen.debug();
   });
 
   it("should render product list and pagination when data is loaded", () => {
