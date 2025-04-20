@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
 
-import { render, screen } from "@testing-library/react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { screen } from "@testing-library/react";
+import { renderWithClient } from "@/lib/utils/test-utils/renderWithClient";
 import * as useProductParamsModule from "@/lib/hooks/useProductParams";
 import * as useProductsByCategoryModule from "@/lib/hooks/queries/useProductsByCategory";
 import ProductsCategory from "..";
@@ -29,13 +29,6 @@ const useProductParamsMock =
   useProductParamsModule.useProductParams as jest.Mock;
 const useProductsByCategory =
   useProductsByCategoryModule.useProductsByCategory as jest.Mock;
-
-const renderWithClient = (ui: React.ReactElement) => {
-  const queryClient = new QueryClient();
-  return render(
-    <QueryClientProvider client={queryClient}>{ui}</QueryClientProvider>,
-  );
-};
 
 describe("ProductsCategory", () => {
   beforeEach(() => {
