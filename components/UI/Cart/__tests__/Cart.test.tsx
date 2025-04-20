@@ -1,41 +1,24 @@
-import { render, screen } from "@testing-library/react";
-import { configureStore } from "@reduxjs/toolkit";
-import { Provider } from "react-redux";
-import cartReducer from "@/store/cartSlice";
+import { screen } from "@testing-library/react";
+import { renderWithProviders } from "@/lib/utils/test-utils/renderWithProviders";
 import Cart from "..";
 
+const preloadedState = {
+  cart: { cartItems: [], totalProducts: 3, totalPrice: 0 },
+};
+
 describe("Cart", () => {
-  const renderWithStore = (
-    preloadedState = {
-      cart: { cartItems: [], totalProducts: 3, totalPrice: 0 },
-    },
-  ) => {
-    const store = configureStore({
-      reducer: {
-        cart: cartReducer,
-      },
-      preloadedState,
-    });
-
-    return render(
-      <Provider store={store}>
-        <Cart />
-      </Provider>,
-    );
-  };
-
   it("should render link to /cart", () => {
-    renderWithStore();
+    renderWithProviders(<Cart />, { preloadedState });
     expect(screen.getByRole("link")).toHaveAttribute("href", "/cart");
   });
 
   it("should render the cart icon", () => {
-    renderWithStore();
+    renderWithProviders(<Cart />, { preloadedState });
     expect(screen.getByTestId("cart-icon")).toBeInTheDocument();
   });
 
   it("should display total products", () => {
-    renderWithStore();
+    renderWithProviders(<Cart />, { preloadedState });
     expect(screen.getByText("3")).toBeInTheDocument();
   });
 });
