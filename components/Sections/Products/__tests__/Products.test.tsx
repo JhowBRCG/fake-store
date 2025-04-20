@@ -1,8 +1,8 @@
 /* eslint-disable react/display-name */
 
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithClient } from "@/lib/utils/test-utils/renderWithClient";
 import Products from "..";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const useProductParamsMock = jest.fn();
 const useProductsMock = jest.fn();
@@ -35,13 +35,6 @@ jest.mock(
       <div data-testid="error-message">{message}</div>
     ),
 );
-
-const renderWithClient = (ui: React.ReactElement) => {
-  const queryClient = new QueryClient();
-  return render(
-    <QueryClientProvider client={queryClient}>{ui}</QueryClientProvider>,
-  );
-};
 
 describe("Products", () => {
   beforeEach(() => {
