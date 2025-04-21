@@ -14,7 +14,7 @@ jest.mock("@/components/sections/Products", () => () => (
 ));
 
 describe("Home Page", () => {
-  it("render FilterProducts and Products component", () => {
+  it("should render FilterProducts and Products component", () => {
     render(<Home />);
 
     expect(screen.getByTestId("filter-products")).toBeInTheDocument();

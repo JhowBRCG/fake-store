@@ -12,7 +12,7 @@ jest.mock("../../../ui/Cart", () => () => (
 ));
 
 describe("Header", () => {
-  it("render all children", () => {
+  it("should render all children", () => {
     render(<Header />);
 
     expect(screen.getByText("STORE")).toBeInTheDocument();
