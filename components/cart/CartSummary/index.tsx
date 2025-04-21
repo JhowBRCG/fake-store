@@ -13,7 +13,7 @@ export default function CartSummary() {
   if (!cartState.totalProducts) return null;
 
   return (
-    <div className="mt-[33px] bg-[#F5F5F5] p-4">
+    <div className="mt-[33px] bg-[#F5F5F5] p-4" data-testid="summary">
       <p>
         Total Price: <span className="text-red-400">{formattedPrice}</span>
       </p>
