@@ -1,7 +1,7 @@
 import FilterProducts from "@/components/products/FilterProducts";
 import ProductsCategory from "@/components/sections/ProductsCategory";
 
-export default async function page({
+export default async function CategoryNamePage({
   params,
 }: {
   params: Promise<{ category_name: string }>;
