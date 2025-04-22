@@ -28,7 +28,7 @@ describe("CartItems", () => {
     const newPreloadedState = {
       cart: {
         ...preloadedState,
-        cartItems: [{}, {}],
+        cartItems: [{ id: 1 }, { id: 2 }],
       },
     };
 
