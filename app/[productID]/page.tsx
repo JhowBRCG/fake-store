@@ -1,6 +1,6 @@
 import ProductDetails from "@/components/sections/ProductDetails";
 
-export default async function page({
+export default async function ProductIdPage({
   params,
 }: {
   params: Promise<{ productID: string }>;
