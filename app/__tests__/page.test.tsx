@@ -5,6 +5,10 @@ import Home from "../page";
 
 // Mocka os dois componentes importados
 
+jest.mock("@/components/sections/HeaderBanner", () => () => (
+  <div data-testid="header-banner">HeaderBanner Component</div>
+));
+
 jest.mock("@/components/products/FilterProducts", () => () => (
   <div data-testid="filter-products">FilterProducts Component</div>
 ));
@@ -19,5 +23,6 @@ describe("Home Page", () => {
 
     expect(screen.getByTestId("filter-products")).toBeInTheDocument();
     expect(screen.getByTestId("products")).toBeInTheDocument();
+    expect(screen.getByTestId("header-banner")).toBeInTheDocument();
   });
 });
