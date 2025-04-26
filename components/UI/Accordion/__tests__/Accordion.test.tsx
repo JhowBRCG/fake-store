@@ -49,4 +49,10 @@ describe("Accordion", () => {
     expect(screen.queryByTestId("icon-up")).not.toBeInTheDocument();
     expect(contentWrapper).toHaveClass("grid-rows-[0fr]");
   });
+
+  it("should render children inside the accordion", () => {
+    render(<Accordion title={title}>{content}</Accordion>);
+
+    expect(screen.getByText("Accordion content")).toBeInTheDocument();
+  });
 });
