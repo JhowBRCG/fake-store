@@ -26,7 +26,7 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
           addToCart({ id, title, price, img: images?.[0] || "", quantity: 1 }),
         )
       }
-      className="w-full cursor-pointer rounded-md bg-[#F2CC8F] p-[9px] font-semibold"
+      className="w-full cursor-pointer rounded-md bg-[#F2CC8F] p-[9px] font-semibold hover:brightness-95"
     >
       ADD TO CART
     </button>
