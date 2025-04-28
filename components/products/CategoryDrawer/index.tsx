@@ -3,15 +3,17 @@ import { formatCategory } from "@/lib/utils/formatCategory";
 import { cn } from "@/lib/utils/cn";
 import { FaWindowClose } from "react-icons/fa";
 
+type CategoryDrawerProps = {
+  handleCategory: (category: string) => void;
+  showAllProducts: () => void;
+  isFilterOpen: boolean;
+};
+
 export default function CategoryDrawer({
   handleCategory,
   showAllProducts,
   isFilterOpen,
-}: {
-  handleCategory: (category: string) => void;
-  showAllProducts: () => void;
-  isFilterOpen: boolean;
-}) {
+}: CategoryDrawerProps) {
   const animation = isFilterOpen ? "translate-x-0" : "-translate-x-full";
 
   return (
