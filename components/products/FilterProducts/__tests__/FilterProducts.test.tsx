@@ -14,7 +14,7 @@ jest.mock("../../SortProductByPrice", () => () => (
 ));
 
 describe("FilterProducts", () => {
-  it("render all chidren", () => {
+  it("should render all children", () => {
     render(<FilterProducts />);
 
     expect(screen.getByText("Classify by")).toBeInTheDocument();
