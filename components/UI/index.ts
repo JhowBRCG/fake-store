@@ -5,6 +5,7 @@ import Pagination from "./Pagination";
 import ErrorMessage from "./ErrorMessage";
 import RatingStars from "./RatingStars";
 import SearchBar from "./SearchBar";
+import SimpleSlider from "./SimpleSlider";
 
 export {
   Accordion,
@@ -14,4 +15,5 @@ export {
   ErrorMessage,
   RatingStars,
   SearchBar,
+  SimpleSlider,
 };
