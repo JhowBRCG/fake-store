@@ -21,7 +21,7 @@ export default function Products() {
   const showSearchQuery = query;
   const hasNoResults = data?.total === 0;
 
-  if (isLoading) return <LoadingSkeletonCards />;
+  if (isLoading) return <LoadingSkeletonCards cards={15} />;
 
   return (
     <section>
