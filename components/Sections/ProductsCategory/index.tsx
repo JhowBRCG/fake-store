@@ -2,6 +2,7 @@
 
 import ProductList from "@/components/products/ProductList";
 import Pagination from "@/components/ui/Pagination";
+import LoadingSkeletonCards from "@/components/ui/LoadingSkeletonCards";
 import { useProductsByCategory } from "@/lib/hooks/queries/useProductsByCategory";
 import { calculateTotalPages } from "@/lib/utils/calculateTotalPages";
 import { formatCategory } from "@/lib/utils/formatCategory";
@@ -24,7 +25,7 @@ export default function ProductsCategory({
     order,
   );
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <LoadingSkeletonCards cards={10} />;
 
   const totalPages = calculateTotalPages(data?.total ?? 0);
   const hasNoResults = data?.total === 0;
