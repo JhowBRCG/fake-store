@@ -3,6 +3,7 @@
 import ProductList from "@/components/products/ProductList";
 import Pagination from "@/components/ui/Pagination";
 import ErrorMessage from "@/components/ui/ErrorMessage";
+import LoadingSkeletonCards from "@/components/ui/LoadingSkeletonCards";
 import { useProducts } from "@/lib/hooks/queries/useProducts";
 import { useProductsBySearch } from "@/lib/hooks/queries/useProductsBySearch";
 import { calculateTotalPages } from "@/lib/utils/calculateTotalPages";
@@ -20,7 +21,7 @@ export default function Products() {
   const showSearchQuery = query;
   const hasNoResults = data?.total === 0;
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <LoadingSkeletonCards />;
 
   return (
     <section>
