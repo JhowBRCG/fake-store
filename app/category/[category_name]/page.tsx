@@ -1,5 +1,5 @@
 import FilterProducts from "@/components/products/FilterProducts";
-import ProductsCategory from "@/components/sections/ProductsCategory";
+import ProductsCategory from "@/components/sectionss/ProductsCategory";
 
 export default async function CategoryNamePage({
   params,
