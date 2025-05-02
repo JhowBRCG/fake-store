@@ -1,6 +1,6 @@
-import Products from "@/components/sectionss/Products";
+import Products from "@/components/sections/Products";
 import FilterProducts from "@/components/products/FilterProducts";
-import HeaderBanner from "@/components/sectionss/HeaderBanner";
+import HeaderBanner from "@/components/sections/HeaderBanner";
 
 export default function Home() {
   return (
