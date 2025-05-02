@@ -14,6 +14,10 @@ jest.mock("@/components/products/ProductList", () => () => (
   <div data-testid="product-list">ProductList component</div>
 ));
 
+jest.mock("@/components/ui/LoadingSkeletonCards", () => () => (
+  <div data-testid="loading-skeleton-cards">LoadinSkeletonCards</div>
+));
+
 jest.mock(
   "@/components/ui/ErrorMessage",
   () =>
@@ -35,7 +39,7 @@ describe("ProductsCategory", () => {
     jest.clearAllMocks();
   });
 
-  it("should show loading text when data is loading", () => {
+  it("should render card skeleton when data is loading", () => {
     useProductParamsMock.mockReturnValue({
       currenPage: 1,
       sort: "",
@@ -49,7 +53,7 @@ describe("ProductsCategory", () => {
 
     renderWithClient(<ProductsCategory categoryName="laptops" />);
 
-    expect(screen.getByText("Loading...")).toBeInTheDocument();
+    expect(screen.getByTestId("loading-skeleton-cards")).toBeInTheDocument();
   });
 
   it("should show category name", () => {
