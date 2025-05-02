@@ -1,13 +1,13 @@
 "use client";
 
 import ProductList from "@/components/products/ProductList";
-import Pagination from "@/components/uis/Pagination";
-import LoadingSkeletonCards from "@/components/uis/LoadingSkeletonCards";
+import Pagination from "@/components/ui/Pagination";
+import LoadingSkeletonCards from "@/components/ui/LoadingSkeletonCards";
 import { useProductsByCategory } from "@/lib/hooks/queries/useProductsByCategory";
 import { calculateTotalPages } from "@/lib/utils/calculateTotalPages";
 import { formatCategory } from "@/lib/utils/formatCategory";
 import { useProductParams } from "@/lib/hooks/useProductParams";
-import { ErrorMessage } from "@/components/uis";
+import { ErrorMessage } from "@/components/ui";
 
 type ProductsCategoryProps = {
   categoryName: string;

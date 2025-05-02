@@ -1,7 +1,7 @@
 import Image from "next/image";
 import bigSale from "@/public/imgs/banner-1.jpeg";
 import cyberMonday from "@/public/imgs/banner-2.jpeg";
-import SimpleSlider from "@/components/uis/SimpleSlider";
+import SimpleSlider from "@/components/ui/SimpleSlider";
 
 const bannerImages = [bigSale, cyberMonday];
 

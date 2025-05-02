@@ -2,7 +2,7 @@
 
 import { useProductsByID } from "@/lib/hooks/queries/useProductsByID";
 import { formatRating } from "@/lib/utils";
-import { RatingStars, Accordion, ErrorMessage } from "@/components/uis";
+import { RatingStars, Accordion, ErrorMessage } from "@/components/ui";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
 import ProductPrice from "./ProductPrice";
