@@ -28,6 +28,10 @@ jest.mock("@/components/ui/Pagination", () => () => (
   <div data-testid="pagination">Pagination component</div>
 ));
 
+jest.mock("@/components/ui/LoadingSkeletonCards", () => () => (
+  <div data-testid="loading-skeleton-cards">LoadinSkeletonCards</div>
+));
+
 jest.mock(
   "@/components/ui/ErrorMessage",
   () =>
@@ -41,7 +45,7 @@ describe("Products", () => {
     jest.clearAllMocks();
   });
 
-  it("should show loading text when data is loading", () => {
+  it("should render card skeleton when data is loading", () => {
     useProductParamsMock.mockImplementation(() => ({
       currentPage: 1,
       sort: "",
@@ -56,7 +60,7 @@ describe("Products", () => {
 
     renderWithClient(<Products />);
 
-    expect(screen.getByText("Loading...")).toBeInTheDocument();
+    expect(screen.getByTestId("loading-skeleton-cards")).toBeInTheDocument();
   });
 
   it("should render product list and pagination when data is loaded", () => {
