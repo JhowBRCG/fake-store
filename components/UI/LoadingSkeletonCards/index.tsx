@@ -2,7 +2,7 @@ type LoadingSkeletonCards = {
   cards: number;
 };
 
-export default function LoadingSkeleton({ cards }: LoadingSkeletonCards) {
+export default function LoadingSkeletonCards({ cards }: LoadingSkeletonCards) {
   return (
     <div className="mt-[20px] grid grid-cols-2 gap-[2px] overflow-hidden rounded-lg md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6">
       {Array.from({ length: cards }).map((_, i) => (
