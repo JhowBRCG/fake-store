@@ -1,9 +1,9 @@
 "use client";
 
 import ProductList from "@/components/products/ProductList";
-import Pagination from "@/components/ui/Pagination";
-import ErrorMessage from "@/components/ui/ErrorMessage";
-import LoadingSkeletonCards from "@/components/ui/LoadingSkeletonCards";
+import Pagination from "@/components/uis/Pagination";
+import ErrorMessage from "@/components/uis/ErrorMessage";
+import LoadingSkeletonCards from "@/components/uis/LoadingSkeletonCards";
 import { useProducts } from "@/lib/hooks/queries/useProducts";
 import { useProductsBySearch } from "@/lib/hooks/queries/useProductsBySearch";
 import { calculateTotalPages } from "@/lib/utils/calculateTotalPages";

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { productProps } from "@/lib/@types/productProps";
-import DiscountPercentage from "../../ui/DiscountPercentage";
+import DiscountPercentage from "../../uis/DiscountPercentage";
 import { FaStar } from "react-icons/fa";
 import { formatRating, formatPrice } from "@/lib/utils";
 
