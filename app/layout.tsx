@@ -30,11 +30,11 @@ export default function RootLayout({
             <div className="flex min-h-screen flex-col">
               <Suspense>
                 <Header />
+                <div className="mx-auto w-full md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container-2xl">
+                  {children}
+                </div>
+                <Footer />
               </Suspense>
-              <div className="mx-auto w-full md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container-2xl">
-                {children}
-              </div>
-              <Footer />
             </div>
           </ReduxProvider>
         </QueryProvider>
