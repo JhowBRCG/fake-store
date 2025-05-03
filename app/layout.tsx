@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { Suspense } from "react";
 import QueryProvider from "@/lib/providers/QueryProvider";
 import ReduxProvider from "@/lib/providers/ReduxProvider";
 
@@ -27,7 +28,9 @@ export default function RootLayout({
         <QueryProvider>
           <ReduxProvider>
             <div className="flex min-h-screen flex-col">
-              <Header />
+              <Suspense>
+                <Header />
+              </Suspense>
               <div className="mx-auto w-full md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container-2xl">
                 {children}
               </div>
