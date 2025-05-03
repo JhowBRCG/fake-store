@@ -19,6 +19,7 @@ export default function HeaderBanner() {
               src={img}
               alt="banner image"
               fill
+              priority
             />
           </div>
         ))}
