@@ -1,11 +1,12 @@
 import ProductDetails from "@/components/sections/ProductDetails";
 import { getProductByID } from "@/lib/services/getProductByID";
+import { Metadata } from "next";
 
 type Props = {
   params: Promise<{ productID: string }>;
 };
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { productID } = await params;
 
   const product = await getProductByID(productID);
