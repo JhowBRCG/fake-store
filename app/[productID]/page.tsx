@@ -1,10 +1,10 @@
 import ProductDetails from "@/components/sections/ProductDetails";
 
-export default async function ProductIdPage({
-  params,
-}: {
+type Props = {
   params: Promise<{ productID: string }>;
-}) {
+};
+
+export default async function ProductIdPage({ params }: Props) {
   const { productID } = await params;
 
   return (
