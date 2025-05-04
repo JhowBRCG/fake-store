@@ -4,6 +4,7 @@ import { cn } from "./cn";
 import { formatCategory } from "./formatCategory";
 import { formatPrice } from "./formatPrice";
 import { formatRating } from "./formatRating";
+import { capitalizeFirstLetter } from "./capitalizeFirstLetter";
 
 export {
   calculateOriginalPrice,
@@ -12,4 +13,5 @@ export {
   formatCategory,
   formatPrice,
   formatRating,
+  capitalizeFirstLetter,
 };
