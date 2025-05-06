@@ -8,11 +8,12 @@ import ProductInfo from "./ProductInfo";
 import ProductPrice from "./ProductPrice";
 import AddToCartButton from "./AddToCartButton";
 import BuyButton from "./BuyButton";
+import LoadingSkeleton from "./LoadingSkeleton";
 
 export default function ProductDetails({ productID }: { productID: string }) {
   const { data, isLoading, isError } = useProductsByID(productID);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <LoadingSkeleton />;
   if (isError || !data)
     return (
       <ErrorMessage
