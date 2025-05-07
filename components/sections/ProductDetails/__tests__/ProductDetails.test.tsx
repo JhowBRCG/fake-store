@@ -49,6 +49,10 @@ jest.mock("../BuyButton", () => () => (
   <div data-testid="buy-button">BuyButton component</div>
 ));
 
+jest.mock("../LoadingSkeleton", () => () => (
+  <div data-testid="loading-skeleton">LoadingSkeleton component</div>
+));
+
 const productMock = {
   title: "Product 1",
   images: ["image.jpg"],
@@ -68,7 +72,7 @@ describe("ProductDetails", () => {
     jest.clearAllMocks();
   });
 
-  it("should show loading text when data is loading", () => {
+  it("should render LoadingSkeleton when data is loading", () => {
     useProductsIDMock.mockReturnValue({
       isLoading: true,
       isError: false,
@@ -77,7 +81,7 @@ describe("ProductDetails", () => {
 
     renderWithClient(<ProductDetails productID="1" />);
 
-    expect(screen.getByText("Loading..."));
+    expect(screen.getByTestId("loading-skeleton")).toBeInTheDocument();
   });
 
   it("should render ErrorMessage when no products are found", () => {
