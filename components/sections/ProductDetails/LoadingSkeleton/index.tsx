@@ -1,7 +1,6 @@
 import { Accordion } from "@/components/ui";
 import ProductInfo from "../ProductInfo";
 import ProductPrice from "../ProductPrice";
-import AddToCartButton from "../AddToCartButton";
 import BuyButton from "../BuyButton";
 
 export default function LoadingSkeleton() {
@@ -19,7 +18,6 @@ export default function LoadingSkeleton() {
       <ProductPrice discount={0} price={0} />
 
       <div className="col-start-2 mb-[50px] flex gap-3 p-4 lg:flex-col">
-        <AddToCartButton />
         <BuyButton />
       </div>
 
